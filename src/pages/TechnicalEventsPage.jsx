@@ -60,7 +60,7 @@ export default function TechnicalEventsPage() {
                 Schedule & Entitlements
               </span>
               <p className="text-sm sm:text-base font-bold font-display text-brand-navy">
-                All events on October 14, 2026 • PRESENTIX on Oct 14 & 15 (Online & Offline)
+                Events on October 14, 2026 • PRESENTIX: Online on Oct 14 & Offline on Oct 15
               </p>
             </div>
           </div>
@@ -449,10 +449,10 @@ export default function TechnicalEventsPage() {
                   </div>
                   <div>
                     <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-brand-magenta leading-tight">
-                      Hybrid Event Mode
+                      Dual Mode Schedule
                     </span>
                     <span className="text-xs sm:text-sm font-bold font-display text-brand-navy leading-tight">
-                      Online & Offline (Oct 14 & 15)
+                      Online (Oct 14) • Offline (Oct 15)
                     </span>
                   </div>
                 </div>
@@ -461,11 +461,15 @@ export default function TechnicalEventsPage() {
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Dates: <strong className="text-slate-800">October 14 & 15, 2026</strong></span>
+                  <span>Online Contest: <strong className="text-emerald-700 font-bold">October 14, 2026 (Free)</strong></span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-brand-navy flex-shrink-0" />
+                  <span>Offline Contest: <strong className="text-brand-navy font-bold">October 15, 2026</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                  <span>Mode: <strong className="text-slate-800">Online & Offline (Hybrid Mode)</strong></span>
+                  <span>Mode: <strong className="text-slate-800">Online (Oct 14) & Offline (Oct 15)</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-brand-navy flex-shrink-0" />
@@ -478,11 +482,11 @@ export default function TechnicalEventsPage() {
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span className="text-xs font-bold font-display uppercase tracking-wider">
-                    Online Mode is 100% Free!
+                    Online Mode (Oct 14) is 100% Free!
                   </span>
                 </div>
                 <p className="text-xs text-emerald-800 mt-1 leading-relaxed">
-                  Registering the PRESENTIX to contest in online mode is completely free of charge.
+                  Registering PRESENTIX to contest in Online mode on October 14 is completely free of charge. Offline presentations take place on-campus on October 15.
                 </p>
               </div>
 

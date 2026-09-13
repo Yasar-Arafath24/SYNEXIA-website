@@ -23,8 +23,8 @@ export const SYMPOSIUM_CONFIG = {
     time: "9:00 AM – 5:00 PM",
     reportingTime: "8:30 AM",
     allEventsDate: "October 14, 2026",
-    presentixDates: "October 14 – 15, 2026",
-    specialScheduleNote: "Symposium date for all events is October 14. Only PRESENTIX is conducted in both Online and Offline mode across October 14 & 15.",
+    presentixDates: "October 14 (Online) & October 15 (Offline), 2026",
+    specialScheduleNote: "Symposium date for all events is October 14. PRESENTIX is conducted in two modes: Online Mode on October 14 and Offline Mode on October 15.",
   },
 
   // Highlighted Participant Perks

@@ -113,11 +113,11 @@ export default function HomePage() {
               <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200/90 shadow-subtle text-xs sm:text-sm">
                 <div className="flex items-center gap-2 text-brand-navy font-bold font-display">
                   <Calendar className="w-4 h-4 text-brand-magenta" />
-                  <span className="tracking-wide">SYMPOSIUM DATE: OCTOBER 14,15 2026</span>
+                  <span className="tracking-wide">SYMPOSIUM DATE: OCTOBER 14, 2026</span>
                 </div>
                 <span className="hidden sm:inline text-slate-300">•</span>
-                <span className="text-slate-600 text-xs font-mono font-medium">
-                  ( ONLINE - OCT 14 | OFFLINE - OCT 15)
+                <span className="text-slate-700 text-xs font-mono font-medium">
+                  PRESENTIX: <strong className="text-emerald-700">ONLINE on OCT 14</strong> | <strong className="text-brand-navy">OFFLINE on OCT 15</strong>
                 </span>
               </div>
             </div>
@@ -243,7 +243,7 @@ export default function HomePage() {
                           <span>PRESENTIX Online Contest</span>
                         </div>
                         <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                          Registering for <strong>PRESENTIX</strong> to contest in <span className="text-emerald-700 font-bold">Online Mode is completely FREE</span>!
+                          Registering for <strong>PRESENTIX</strong> to contest in <span className="text-emerald-700 font-bold">Online Mode (Oct 14) is completely FREE</span>! Offline mode will be held on <strong>Oct 15</strong>.
                         </p>
                       </div>
 
