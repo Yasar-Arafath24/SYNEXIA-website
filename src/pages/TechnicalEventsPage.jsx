@@ -20,7 +20,9 @@ import {
   Utensils,
   Award,
   ExternalLink,
-  QrCode
+  QrCode,
+  Trophy,
+  Gift
 } from 'lucide-react';
 import { technicalEvents } from '../data/events';
 import { siteConfig } from '../data/siteConfig';
@@ -141,6 +143,30 @@ export default function TechnicalEventsPage() {
                 </div>
               </div>
 
+              {/* CODENEX PRIZES BOX */}
+              <div className="p-4 rounded-xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/60 text-brand-navy">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <Trophy className="w-4 h-4 text-amber-600" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800">
+                    Cash Prizes & Honors
+                  </span>
+                </div>
+                <div className="space-y-1.5 text-xs font-semibold">
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/80 border border-amber-200/70 shadow-2xs">
+                    <span className="text-amber-900 font-bold">1st Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">5,000 RS + Certificate</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/60 border border-slate-200/60">
+                    <span className="text-slate-700">2nd Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">3,000 RS + Certificate</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/60 border border-slate-200/60">
+                    <span className="text-slate-700">3rd Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">1,000 RS + Certificate</span>
+                  </div>
+                </div>
+              </div>
+
               <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
                 <PrimaryButton 
                   href={codenex.registrationUrl || siteConfig.registrationUrl}
@@ -244,6 +270,30 @@ export default function TechnicalEventsPage() {
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-brand-navy flex-shrink-0" />
                   <span>Team Size: <strong className="text-slate-800">{syntaxStrike.teamSize}</strong></span>
+                </div>
+              </div>
+
+              {/* SYNTAX STRIKE PRIZES BOX */}
+              <div className="p-4 rounded-xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/60 text-brand-navy">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <Trophy className="w-4 h-4 text-amber-600" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800">
+                    Cash Prizes & Honors
+                  </span>
+                </div>
+                <div className="space-y-1.5 text-xs font-semibold">
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/80 border border-amber-200/70 shadow-2xs">
+                    <span className="text-amber-900 font-bold">1st Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">5,000 RS + Certificate</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/60 border border-slate-200/60">
+                    <span className="text-slate-700">2nd Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">3,000 RS + Certificate</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/60 border border-slate-200/60">
+                    <span className="text-slate-700">3rd Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">1,000 RS + Certificate</span>
+                  </div>
                 </div>
               </div>
 
@@ -420,6 +470,43 @@ export default function TechnicalEventsPage() {
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-brand-navy flex-shrink-0" />
                   <span>Team Size: <strong className="text-slate-800">{presentix.teamSize}</strong></span>
+                </div>
+              </div>
+
+              {/* 100% FREE ONLINE PARTICIPATION CALLOUT */}
+              <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  <span className="text-xs font-bold font-display uppercase tracking-wider">
+                    Online Mode is 100% Free!
+                  </span>
+                </div>
+                <p className="text-xs text-emerald-800 mt-1 leading-relaxed">
+                  Registering the PRESENTIX to contest in online mode is completely free of charge.
+                </p>
+              </div>
+
+              {/* PRESENTIX PRIZES BOX */}
+              <div className="p-4 rounded-xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/60 text-brand-navy">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <Trophy className="w-4 h-4 text-amber-600" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800">
+                    Cash Prizes & Honors
+                  </span>
+                </div>
+                <div className="space-y-1.5 text-xs font-semibold">
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/80 border border-amber-200/70 shadow-2xs">
+                    <span className="text-amber-900 font-bold">1st Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">5,000 RS + Certificate</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/60 border border-slate-200/60">
+                    <span className="text-slate-700">2nd Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">3,000 RS + Certificate</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1 px-2 rounded-lg bg-white/60 border border-slate-200/60">
+                    <span className="text-slate-700">3rd Prize</span>
+                    <span className="font-mono text-brand-navy font-bold">1,000 RS + Certificate</span>
+                  </div>
                 </div>
               </div>
 

@@ -17,7 +17,8 @@ import {
   ExternalLink,
   QrCode,
   Utensils,
-  Award
+  Award,
+  Gift
 } from 'lucide-react';
 import { nonTechnicalEvents } from '../data/events';
 import { siteConfig } from '../data/siteConfig';
@@ -162,6 +163,19 @@ export default function NonTechnicalEventsPage() {
                   <Users className="w-4 h-4 text-brand-navy flex-shrink-0" />
                   <span>Participation: <strong className="text-slate-800">{nexahunt.teamSize}</strong></span>
                 </div>
+              </div>
+
+              {/* EXCITING PRIZES HIGHLIGHT */}
+              <div className="p-3.5 rounded-xl bg-gradient-to-br from-brand-magenta/10 via-pink-50 to-transparent border border-brand-magenta/30 text-brand-navy">
+                <div className="flex items-center gap-2">
+                  <Gift className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span className="text-xs font-bold font-display uppercase tracking-wider text-brand-magenta">
+                    Exciting Prizes Awaiting!
+                  </span>
+                </div>
+                <p className="text-xs text-slate-700 mt-1 leading-relaxed">
+                  Podium winners will be awarded <strong>Exciting Prizes & Merit Certificates</strong>!
+                </p>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
@@ -310,6 +324,19 @@ export default function NonTechnicalEventsPage() {
                   <Users className="w-4 h-4 text-brand-navy flex-shrink-0" />
                   <span>Participation: <strong className="text-slate-800">{synerxAuction.teamSize}</strong></span>
                 </div>
+              </div>
+
+              {/* EXCITING PRIZES HIGHLIGHT */}
+              <div className="p-3.5 rounded-xl bg-gradient-to-br from-brand-navy/10 via-slate-50 to-transparent border border-brand-navy/30 text-brand-navy">
+                <div className="flex items-center gap-2">
+                  <Gift className="w-4 h-4 text-brand-navy flex-shrink-0" />
+                  <span className="text-xs font-bold font-display uppercase tracking-wider text-brand-navy">
+                    Exciting Prizes Awaiting!
+                  </span>
+                </div>
+                <p className="text-xs text-slate-700 mt-1 leading-relaxed">
+                  Winning cricket squads will be awarded <strong>Exciting Prizes & Certificates</strong>!
+                </p>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">

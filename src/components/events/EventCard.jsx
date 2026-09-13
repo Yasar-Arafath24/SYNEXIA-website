@@ -67,6 +67,21 @@ export default function EventCard({
               Offline
             </span>
           )}
+          {event.isOnlineFree && (
+            <span className="inline-flex items-center px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
+              Online Free
+            </span>
+          )}
+          {event.prizes && event.prizes[0] && (
+            <span className="inline-flex items-center px-2 py-0.5 rounded bg-amber-50 text-amber-800 font-bold border border-amber-200">
+              Top: {event.prizes[0].amount}
+            </span>
+          )}
+          {event.hasExcitingPrizes && (
+            <span className="inline-flex items-center px-2 py-0.5 rounded bg-pink-50 text-brand-magenta font-bold border border-pink-200">
+              Exciting Prizes
+            </span>
+          )}
         </div>
 
         {/* One-Line Description */}

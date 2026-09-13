@@ -12,7 +12,9 @@ import {
   Calendar,
   Award,
   Utensils,
-  Laptop
+  Laptop,
+  Megaphone,
+  Gift
 } from 'lucide-react';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import { siteConfig } from '../data/siteConfig';
@@ -115,7 +117,7 @@ export default function HomePage() {
                 </div>
                 <span className="hidden sm:inline text-slate-300">•</span>
                 <span className="text-slate-600 text-xs font-mono font-medium">
-                  ( OFFLINE - OCT 14 | ONLINE - OCT 15)
+                  ( ONLINE - OCT 14 | OFFLINE - OCT 15)
                 </span>
               </div>
             </div>
@@ -190,8 +192,8 @@ export default function HomePage() {
 
                     <div className="pt-2 flex flex-wrap items-center gap-2 text-xs">
                       <span className="text-slate-500 font-medium">Permitted AI Tools:</span>
-                      <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 font-mono font-bold border border-slate-200">Antigravity</span>
                       <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 font-mono font-bold border border-slate-200">Claude</span>
+                      <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 font-mono font-bold border border-slate-200">Antigravity</span>
                       <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 font-mono font-bold border border-slate-200">ChatGPT</span>
                     </div>
 
@@ -201,6 +203,75 @@ export default function HomePage() {
                         className="inline-flex items-center text-xs sm:text-sm font-bold text-brand-magenta hover:text-brand-navy transition-colors gap-1.5 animated-underline"
                       >
                         <span>View CODENEX Track Details & Rules</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* IMPORTANT ANNOUNCEMENT CARD: FREE ONLINE PRESENTIX & EXCITING PRIZES FOR NON-TECHNICAL */}
+            <div className="mt-5 max-w-2xl sm:max-w-3xl mx-auto animate-fade-up stagger-5 text-left">
+              <div className="brand-card p-6 sm:p-8 bg-white border-2 border-brand-navy/30 shadow-md relative overflow-hidden group hover:border-brand-navy transition-all duration-300">
+                {/* Asymmetric Left Navy Accent Line */}
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-navy" />
+
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-brand-navy/10 text-brand-navy flex items-center justify-center flex-shrink-0 ring-1 ring-brand-navy/20">
+                    <Megaphone className="w-6 h-6 sm:w-7 sm:h-7 text-brand-navy" />
+                  </div>
+
+                  <div className="space-y-3 flex-grow">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-xs font-mono font-bold tracking-wider uppercase text-brand-navy px-2.5 py-0.5 rounded-md bg-brand-navy/10 border border-brand-navy/20">
+                        Important Announcement
+                      </span>
+                      <span className="text-xs font-mono font-bold text-emerald-700 uppercase px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200">
+                        100% Free Online Entry
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-display text-brand-navy leading-snug">
+                      Free Online PRESENTIX & Exciting Prizes for Non-Technical Events
+                    </h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                      <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                        <div className="flex items-center gap-2 text-xs font-bold font-display text-brand-navy uppercase mb-1">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                          <span>PRESENTIX Online Contest</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                          Registering for <strong>PRESENTIX</strong> to contest in <span className="text-emerald-700 font-bold">Online Mode is completely FREE</span>!
+                        </p>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                        <div className="flex items-center gap-2 text-xs font-bold font-display text-brand-navy uppercase mb-1">
+                          <Gift className="w-4 h-4 text-brand-magenta" />
+                          <span>Non-Technical Arena</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                          There will be <strong className="text-brand-magenta">Exciting Prizes & Certificates</strong> for all Non-Technical event winners!
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 flex flex-wrap items-center gap-4">
+                      <Link 
+                        to="/technical-events#presentix" 
+                        className="inline-flex items-center text-xs sm:text-sm font-bold text-brand-navy hover:text-brand-magenta transition-colors gap-1.5 animated-underline"
+                      >
+                        <span>Learn more about PRESENTIX</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                      <span className="text-slate-300 hidden sm:inline">•</span>
+                      <Link 
+                        to="/non-technical-events" 
+                        className="inline-flex items-center text-xs sm:text-sm font-bold text-brand-magenta hover:text-brand-navy transition-colors gap-1.5 animated-underline"
+                      >
+                        <span>Explore Non-Technical Events</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>

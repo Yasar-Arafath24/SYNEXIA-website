@@ -57,11 +57,16 @@ export const technicalEvents = [
       "Teams must work only on their assigned problem statement.",
       "Solutions must be developed independently without sharing with other teams.",
       "Internet access may be provided.",
-      "Only the permitted AI tools — Antigravity, Claude, and ChatGPT — may be used.",
+      "Only the permitted AI tools — Claude, Antigravity, and ChatGPT — may be used.",
       "Participants must be able to explain their implementation.",
       "Final submission must include the Twist adaptation.",
       "Each participant must bring their own laptop.",
       "Judges' decision is final."
+    ],
+    prizes: [
+      { position: "1st Prize", amount: "5,000 RS", perk: "Certificate", highlight: true },
+      { position: "2nd Prize", amount: "3,000 RS", perk: "Certificate" },
+      { position: "3rd Prize", amount: "1,000 RS", perk: "Certificate" }
     ],
     domains: [],
     availableDomains: [],
@@ -116,6 +121,11 @@ export const technicalEvents = [
       "Fix the Code",
       "Submit",
       "Unlock the Next Bug"
+    ],
+    prizes: [
+      { position: "1st Prize", amount: "5,000 RS", perk: "Certificate", highlight: true },
+      { position: "2nd Prize", amount: "3,000 RS", perk: "Certificate" },
+      { position: "3rd Prize", amount: "1,000 RS", perk: "Certificate" }
     ],
     domains: [],
     availableDomains: [],
@@ -212,13 +222,20 @@ export const technicalEvents = [
       "Present a technically sound solution, framework, or perspective.",
       "Defend their ideas through Q&A."
     ],
+    prizes: [
+      { position: "1st Prize", amount: "5,000 RS", perk: "Certificate", highlight: true },
+      { position: "2nd Prize", amount: "3,000 RS", perk: "Certificate" },
+      { position: "3rd Prize", amount: "1,000 RS", perk: "Certificate" }
+    ],
+    isOnlineFree: true,
+    onlineFreeNote: "Registering the PRESENTIX to contest online is completely free!",
     registrationUrl: "",
     date: "October 14 & 15, 2026",
     dates: ["October 14, 2026", "October 15, 2026"],
     mode: "Online & Offline (Hybrid)",
     modeBadge: "Online & Offline",
     isHybrid: true,
-    hybridNote: "Only PRESENTIX is conducted in both Online and Offline mode (October 14 & October 15).",
+    hybridNote: "Only PRESENTIX is conducted in both Online and Offline mode (October 14 & October 15). Online participation is 100% Free.",
     teamSize: "Author & Co-Author",
     venue: "Seminar Hall I & Virtual Platform",
     coordinators: [
@@ -258,6 +275,8 @@ export const nonTechnicalEvents = [
       "Judges' decisions are final."
     ],
     registrationUrl: "",
+    hasExcitingPrizes: true,
+    prizesNote: "Exciting Prizes & Certificates for Podium Winners!",
     date: "October 14, 2026",
     mode: "Offline (On-Campus)",
     modeBadge: "Offline",
@@ -298,6 +317,8 @@ export const nonTechnicalEvents = [
       "The team with the best squad and remaining budget strategy will be declared the winner."
     ],
     registrationUrl: "",
+    hasExcitingPrizes: true,
+    prizesNote: "Exciting Prizes & Certificates for Winning Squads!",
     date: "October 14, 2026",
     mode: "Offline (On-Campus)",
     modeBadge: "Offline",

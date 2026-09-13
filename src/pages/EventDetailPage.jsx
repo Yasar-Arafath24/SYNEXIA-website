@@ -16,7 +16,9 @@ import {
   Target,
   Calendar,
   Globe,
-  ExternalLink
+  ExternalLink,
+  Trophy,
+  Gift
 } from 'lucide-react';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import { siteConfig } from '../data/siteConfig';
@@ -145,6 +147,67 @@ export default function EventDetailPage() {
               </div>
             )}
 
+            {/* PRIZES SECTION (if event has prizes list) */}
+            {event.prizes && event.prizes.length > 0 && (
+              <div className="brand-card p-6 sm:p-8 border-amber-300/80 bg-gradient-to-br from-amber-500/5 via-white to-transparent">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-700 flex items-center justify-center flex-shrink-0">
+                    <Trophy className="w-5 h-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold font-display text-brand-navy uppercase tracking-wider">
+                      Event Prizes & Honors
+                    </h3>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Merit recognition & monetary awards
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {event.prizes.map((prize, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`p-4 rounded-xl border text-center ${
+                        prize.highlight 
+                          ? 'bg-amber-50/80 border-amber-300 shadow-sm ring-1 ring-amber-400/30' 
+                          : 'bg-white border-slate-200'
+                      }`}
+                    >
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block mb-1">
+                        {prize.position}
+                      </span>
+                      <div className="text-xl sm:text-2xl font-black font-display text-brand-navy">
+                        {prize.amount}
+                      </div>
+                      <span className="inline-block text-xs font-semibold text-emerald-700 mt-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
+                        + {prize.perk}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* NON-TECHNICAL EXCITING PRIZES NOTICE */}
+            {event.hasExcitingPrizes && (
+              <div className="brand-card p-6 sm:p-7 border-brand-magenta/40 bg-gradient-to-br from-brand-magenta/5 via-white to-transparent">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-brand-magenta/15 text-brand-magenta flex items-center justify-center flex-shrink-0">
+                    <Gift className="w-5 h-5 text-brand-magenta" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold font-display text-brand-navy uppercase tracking-wider">
+                      Exciting Prizes & Certificates
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-700 mt-0.5">
+                      {event.prizesNote || "Exciting prizes and merit certificates will be awarded to podium winners!"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Rules and Guidelines */}
             <EventRuleList
               rules={event.rules}
@@ -195,6 +258,32 @@ export default function EventDetailPage() {
                     <strong className="text-brand-navy font-semibold">{event.venue || 'Campus Venue TBA'}</strong>
                   </div>
                 </div>
+
+                {/* ONLINE 100% FREE CALLOUT IN SIDEBAR */}
+                {event.isOnlineFree && (
+                  <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 mt-3">
+                    <div className="flex items-center gap-1.5 text-xs font-bold font-display uppercase tracking-wide">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                      <span>100% Free Online Entry</span>
+                    </div>
+                    <p className="text-[11px] text-emerald-800 mt-1 leading-snug">
+                      Online contest entry for {event.title} is completely free!
+                    </p>
+                  </div>
+                )}
+
+                {/* PRIZE POOL PREVIEW IN SIDEBAR */}
+                {event.prizes && event.prizes.length > 0 && (
+                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-300/60 text-brand-navy mt-2">
+                    <div className="flex items-center justify-between text-xs font-bold font-display uppercase tracking-wide text-amber-900">
+                      <span className="flex items-center gap-1.5">
+                        <Trophy className="w-4 h-4 text-amber-600" />
+                        Top Prize
+                      </span>
+                      <span className="font-mono text-brand-navy font-black">{event.prizes[0].amount}</span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Action Buttons */}
