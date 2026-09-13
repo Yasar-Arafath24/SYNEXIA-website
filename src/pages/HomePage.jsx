@@ -111,11 +111,11 @@ export default function HomePage() {
               <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200/90 shadow-subtle text-xs sm:text-sm">
                 <div className="flex items-center gap-2 text-brand-navy font-bold font-display">
                   <Calendar className="w-4 h-4 text-brand-magenta" />
-                  <span className="tracking-wide">SYMPOSIUM DATE: OCTOBER 14, 2026</span>
+                  <span className="tracking-wide">SYMPOSIUM DATE: OCTOBER 14,15 2026</span>
                 </div>
                 <span className="hidden sm:inline text-slate-300">•</span>
                 <span className="text-slate-600 text-xs font-mono font-medium">
-                  ( Oct 14 & 15 • Offline - Oct 14 & Online - Oct 15)
+                  ( OFFLINE - OCT 14 | ONLINE - OCT 15)
                 </span>
               </div>
             </div>
