@@ -115,7 +115,7 @@ export default function HomePage() {
                 </div>
                 <span className="hidden sm:inline text-slate-300">•</span>
                 <span className="text-slate-600 text-xs font-mono font-medium">
-                  (PRESENTIX: Oct 14 & 15 • Online & Offline)
+                  (PRESENTIX: Oct 14 & 15 • Offline - Oct 14 & Online - Oct 15)
                 </span>
               </div>
             </div>
