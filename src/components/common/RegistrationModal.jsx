@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { X, ExternalLink, QrCode } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
@@ -12,6 +12,8 @@ import { siteConfig } from '../../data/siteConfig';
  * - Close using X button
  * - Close when clicking backdrop
  * - Support Escape key
+ * - Trap focus inside the modal while open
+ * - Restore focus on close
  * - Fully responsive on mobile
  */
 export default function RegistrationModal({ 
@@ -24,8 +26,21 @@ export default function RegistrationModal({
   const qrCodePath = siteConfig.qrCodePath;
   const hasFormUrl = Boolean(formUrl && formUrl.trim().length > 0);
   const hasQrCode = Boolean(qrCodePath && qrCodePath.trim().length > 0);
+  const dialogRef = useRef(null);
+  const previouslyFocused = useRef(null);
 
-  // Close on Escape key
+  // Save the element that opened the modal, focus the dialog on open,
+  // and restore focus to that element when the modal closes.
+  useEffect(() => {
+    if (isOpen) {
+      previouslyFocused.current = document.activeElement;
+      dialogRef.current?.focus();
+    } else {
+      previouslyFocused.current?.focus?.();
+    }
+  }, [isOpen]);
+
+  // Close on Escape key + lock background scroll
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -46,6 +61,30 @@ export default function RegistrationModal({
     };
   }, [isOpen, onClose]);
 
+  // Trap Tab navigation inside the dialog while it is open
+  const handleDialogKeyDown = (e) => {
+    if (e.key !== 'Tab') return;
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    const focusables = dialog.querySelectorAll(
+      'a[href], button:not([disabled])'
+    );
+    if (focusables.length === 0) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (e.shiftKey && (active === first || !dialog.contains(active))) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && (active === last || !dialog.contains(active))) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -63,7 +102,10 @@ export default function RegistrationModal({
 
       {/* Modal Dialog Card */}
       <div 
-        className="relative bg-white rounded-card max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 z-10 animate-fade-up overflow-hidden"
+        ref={dialogRef}
+        tabIndex={-1}
+        onKeyDown={handleDialogKeyDown}
+        className="relative bg-white rounded-card max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 z-10 animate-fade-up overflow-hidden focus:outline-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Close (X) Button */}

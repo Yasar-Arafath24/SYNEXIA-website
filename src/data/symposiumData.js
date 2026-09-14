@@ -29,7 +29,7 @@ export const SYMPOSIUM_CONFIG = {
 
   // Highlighted Participant Perks
   perks: {
-    freeFood: "Free Food (Complimentary lunch & refreshments) provided for all participants",
+    freeFood: "Food provided to all participants (lunch & refreshments)",
     certificate: "Participation Certificate provided for all registered participants",
   },
 
@@ -68,7 +68,7 @@ export const SYMPOSIUM_CONFIG = {
     googleFormUrl: siteConfig.registrationUrl,
     qrCodeImage: siteConfig.qrCodePath,
     benefits: [
-      "Free Food provided for all participating delegates",
+      "Food provided to all participating delegates",
       "Official Participation Certificate for all participants",
       "Cash Prizes and Merit Certificates for podium winners",
       "Symposium Delegate Kit & Handout",

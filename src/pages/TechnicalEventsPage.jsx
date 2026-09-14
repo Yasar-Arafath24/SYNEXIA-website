@@ -30,6 +30,7 @@ import PageHero from '../components/common/PageHero';
 import PrimaryButton from '../components/common/PrimaryButton';
 import RegistrationModal from '../components/common/RegistrationModal';
 import ScrollReveal from '../components/common/ScrollReveal';
+import Seo from '../components/common/Seo';
 
 export default function TechnicalEventsPage() {
   const [activeEvent, setActiveEvent] = useState(null);
@@ -39,6 +40,7 @@ export default function TechnicalEventsPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="Technical Events | SYNEXIA'26" description="Compete in SYNEXIA'26 technical tracks — CODENEX hackathon, SYNTAX STRIKE debugging, and PRESENTIX presentation with cash prizes and certificates." />
       {/* PAGE HERO */}
       <PageHero
         badge="Competitive Tracks"
@@ -68,7 +70,7 @@ export default function TechnicalEventsPage() {
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold shadow-sm">
               <Utensils className="w-3.5 h-3.5 text-emerald-600" />
-              Free Food Provided
+              Food Provided to All Participants
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 text-blue-800 border border-blue-200 text-xs font-semibold shadow-sm">
               <Award className="w-3.5 h-3.5 text-blue-600" />
@@ -192,7 +194,7 @@ export default function TechnicalEventsPage() {
               
               {/* Description */}
               <div>
-                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mb-2">
                   Event Overview
                 </h3>
                 <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
@@ -322,7 +324,7 @@ export default function TechnicalEventsPage() {
               
               {/* Description */}
               <div>
-                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mb-2">
                   Event Overview
                 </h3>
                 <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
@@ -539,7 +541,7 @@ export default function TechnicalEventsPage() {
               
               {/* Description */}
               <div>
-                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mb-2">
                   Event Overview
                 </h3>
                 <p className="text-base sm:text-lg text-slate-700 leading-relaxed">

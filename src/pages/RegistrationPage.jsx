@@ -4,6 +4,7 @@ import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import PageHero from '../components/common/PageHero';
 import RegistrationCard from '../components/events/RegistrationCard';
 import EventRuleList from '../components/events/EventRuleList';
+import Seo from '../components/common/Seo';
 
 export default function RegistrationPage() {
   const reg = SYMPOSIUM_CONFIG.registration;
@@ -33,6 +34,7 @@ export default function RegistrationPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="Registration | SYNEXIA'26 | EGS Pillay Engineering College" description="Complete your registration for SYNEXIA'26. Free registration, QR code, and online Google Form for all technical and non-technical events." />
       <PageHero
         badge="Participant Portal"
         title="Symposium Registration"

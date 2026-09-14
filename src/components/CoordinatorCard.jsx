@@ -29,7 +29,7 @@ export default function CoordinatorCard({ coordinator, featured = false, classNa
   const cleanTel = tel || (phone ? phone.replace(/[^+\d]/g, '') : '');
 
   return (
-    <div
+    <article
       className={`brand-card p-6 sm:p-8 flex flex-col items-center text-center relative overflow-hidden transition-all duration-300 group hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-hover-card ${
         featured ? 'border-slate-300 shadow-subtle' : 'border-slate-200'
       } ${className}`}
@@ -94,6 +94,6 @@ export default function CoordinatorCard({ coordinator, featured = false, classNa
           </a>
         </div>
       )}
-    </div>
+    </article>
   );
 }

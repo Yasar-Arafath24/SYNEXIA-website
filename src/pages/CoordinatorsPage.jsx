@@ -3,13 +3,15 @@ import { coordinators } from '../data/coordinators';
 import CoordinatorCard from '../components/CoordinatorCard';
 import { Shield, Sparkles, GraduationCap, Users } from 'lucide-react';
 import ScrollReveal from '../components/common/ScrollReveal';
+import Seo from '../components/common/Seo';
 
 export default function CoordinatorsPage() {
   const { president, secretary, technicalHead, nonTechnicalHead, staffCoordinator } = coordinators;
 
   return (
     <div className="bg-white min-h-screen">
-      
+      <Seo title="Coordinators | SYNEXIA'26 | EGS Pillay Engineering College" description="Meet the core team and event heads organizing SYNEXIA'26 — faculty and student coordinators from the Department of CSE & Business Systems." />
+
       {/* ========================================================================= */}
       {/* HERO SECTION WITH ABSTRACT SYNEXIA-INSPIRED GEOMETRIC DECORATION           */}
       {/* ========================================================================= */}

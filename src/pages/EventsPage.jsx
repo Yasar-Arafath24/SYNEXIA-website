@@ -4,6 +4,7 @@ import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import { allEvents } from '../data/events';
 import PageHero from '../components/common/PageHero';
 import EventCard from '../components/events/EventCard';
+import Seo from '../components/common/Seo';
 
 export default function EventsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -23,6 +24,7 @@ export default function EventsPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="Events & Tracks | SYNEXIA'26" description="Explore the full official event catalog of SYNEXIA'26 — technical, non-technical, and special tracks at EGS Pillay Engineering College." />
       <PageHero
         badge="Official Events Catalog"
         title="Symposium Events & Tracks"
@@ -68,6 +70,7 @@ export default function EventsPage() {
             <input
               type="text"
               placeholder="Search tracks..."
+              aria-label="Search tracks"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 text-sm rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-navy/20 focus:border-brand-navy"

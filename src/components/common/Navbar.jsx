@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { NAV_LINKS } from '../../data/navigationData';
@@ -9,6 +9,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const toggleRef = useRef(null);
+  const menuRef = useRef(null);
 
   // Track scroll position for subtle elevation
   useEffect(() => {
@@ -34,6 +36,52 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  // Close the mobile menu with Escape and restore focus to the toggle
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [isOpen]);
+
+  // Focus the first link when the menu opens and trap Tab navigation within it
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const menu = menuRef.current;
+    if (!menu) return;
+
+    const focusables = Array.from(
+      menu.querySelectorAll('a[href], button:not([disabled])')
+    );
+    focusables[0]?.focus();
+
+    const handleTab = (e) => {
+      if (e.key !== 'Tab' || focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement;
+
+      if (e.shiftKey && (active === first || !menu.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (active === last || !menu.contains(active))) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    menu.addEventListener('keydown', handleTab);
+    return () => menu.removeEventListener('keydown', handleTab);
+  }, [isOpen]);
+
   return (
     <header
       className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 transition-shadow duration-300 ${
@@ -54,13 +102,13 @@ export default function Navbar() {
           >
             <img
               src={siteConfig.synexiaLogo || SYMPOSIUM_CONFIG.logo}
-              alt={`${siteConfig.symposiumName} Logo`}
+              alt="SYNEXIA association logo"
               className="h-10 sm:h-12 w-auto max-w-[200px] sm:max-w-[240px] object-contain transition-transform duration-200 group-hover:opacity-95"
             />
           </Link>
 
           {/* CENTER / RIGHT Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Primary">
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.path}
@@ -98,11 +146,13 @@ export default function Navbar() {
               Register
             </Link>
             <button
+              ref={toggleRef}
               onClick={toggleMenu}
               type="button"
               className="p-2 rounded-lg text-brand-navy hover:bg-slate-100 focus:outline-none transition-colors"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -113,6 +163,9 @@ export default function Navbar() {
 
       {/* MOBILE MENU: Smooth animated drawer */}
       <div
+        id="mobile-menu"
+        ref={menuRef}
+        inert={!isOpen}
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-slate-100 bg-white ${
           isOpen ? 'max-h-[380px] opacity-100 shadow-lg' : 'max-h-0 opacity-0 pointer-events-none'
         }`}

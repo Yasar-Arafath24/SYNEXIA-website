@@ -3,10 +3,12 @@ import { Award, BookOpen, Target, ShieldCheck, CheckCircle2 } from 'lucide-react
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import PageHero from '../components/common/PageHero';
 import SectionTitle from '../components/common/SectionTitle';
+import Seo from '../components/common/Seo';
 
 export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="About | SYNEXIA'26 | EGS Pillay Engineering College" description="Learn about E.G.S. Pillay Engineering College, the Department of CSE & Business Systems, and the vision behind SYNEXIA'26 — an international symposium in Nagapattinam." />
       <PageHero
         badge="Institutional Legacy"
         title={`About ${SYMPOSIUM_CONFIG.name}`}

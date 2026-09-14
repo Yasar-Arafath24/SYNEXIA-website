@@ -12,6 +12,7 @@ import PageHero from '../components/common/PageHero';
 import SectionTitle from '../components/common/SectionTitle';
 import CoordinatorCard from '../components/CoordinatorCard';
 import ScrollReveal from '../components/common/ScrollReveal';
+import Seo from '../components/common/Seo';
 
 export default function ContactPage() {
   const venue = SYMPOSIUM_CONFIG.venue;
@@ -27,6 +28,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="Contact & Venue | SYNEXIA'26 | EGS Pillay Engineering College" description="Reach the SYNEXIA'26 organizing committee. Faculty and student coordinator contacts plus venue details of EGS Pillay Engineering College, Nagapattinam." />
       <PageHero
         badge="Helpdesk & Location"
         title="Contact & Venue"

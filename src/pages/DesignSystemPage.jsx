@@ -18,6 +18,7 @@ import SecondaryButton from '../components/common/SecondaryButton';
 import EventCard from '../components/events/EventCard';
 import EventBadge from '../components/events/EventBadge';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
+import Seo from '../components/common/Seo';
 
 export default function DesignSystemPage() {
   const [copiedToken, setCopiedToken] = useState(null);
@@ -43,6 +44,7 @@ export default function DesignSystemPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="Design System | SYNEXIA'26" description="Brand design system specification for SYNEXIA'26 — visual identity, design tokens, typography, buttons, and responsive guidelines." />
       <PageHero
         badge="Phase 1 Deliverable"
         title="SYNEXIA'26 Brand Design System"
@@ -138,6 +140,7 @@ export default function DesignSystemPage() {
                       onClick={() => copyToken(`var(${token.name})`)}
                       className="p-1 rounded text-slate-400 hover:text-brand-magenta transition-colors"
                       title="Copy CSS variable"
+                      aria-label={`Copy CSS variable ${token.name}`}
                     >
                       {copiedToken === `var(${token.name})` ? (
                         <Check className="w-3.5 h-3.5 text-emerald-600" />

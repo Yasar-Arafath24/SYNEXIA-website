@@ -3,6 +3,7 @@ import { Shield, Award, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import PageHero from '../components/common/PageHero';
 import EventRuleList from '../components/events/EventRuleList';
+import Seo from '../components/common/Seo';
 
 export default function GuidelinesPage() {
   const codeOfConduct = [
@@ -22,6 +23,7 @@ export default function GuidelinesPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="Guidelines & Policies | SYNEXIA'26" description="Official participant code of conduct, certification, and award policies for SYNEXIA'26, the international symposium at EGS Pillay Engineering College." />
       <PageHero
         badge="Official Code of Conduct"
         title="Symposium Guidelines & Policies"

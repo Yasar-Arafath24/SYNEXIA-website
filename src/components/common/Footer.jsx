@@ -120,7 +120,7 @@ export default function Footer() {
               Oct 14, 2026
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-950/40 border border-emerald-800/50 text-emerald-300 font-medium">
-              Free Food Provided
+              Food Provided to All Participants
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-blue-950/40 border border-blue-800/50 text-blue-300 font-medium">
               Participation Certificate
@@ -129,12 +129,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Minimal Copyright & Developer Credit */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="space-y-1 text-center sm:text-left">
             <p>
               © {currentYear} {SYMPOSIUM_CONFIG.name}. {SYMPOSIUM_CONFIG.organizer.department}, {SYMPOSIUM_CONFIG.organizer.institution}.
             </p>
-            <p className="text-slate-400 text-xs font-medium flex items-center justify-center sm:justify-start gap-1.5 flex-wrap">
+            <p className="text-slate-300 text-xs font-medium flex items-center justify-center sm:justify-start gap-1.5 flex-wrap">
               <span>Developed by</span>
               <a
                 href="https://www.linkedin.com/in/yasar-arafath-365490333/"
@@ -148,7 +148,7 @@ export default function Footer() {
               </a>
             </p>
           </div>
-          <p className="text-slate-500 text-[11px]">
+          <p className="text-slate-400 text-[11px]">
             {SYMPOSIUM_CONFIG.organizer.institutionSubtext}
           </p>
         </div>

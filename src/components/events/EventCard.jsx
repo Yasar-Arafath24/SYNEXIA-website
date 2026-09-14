@@ -25,7 +25,7 @@ export default function EventCard({
   const targetUrl = `/events/${event.slug || event.id}`;
 
   return (
-    <div 
+    <article
       id={event.slug || event.id}
       className={`brand-card p-6 sm:p-7 pl-7 sm:pl-8 flex flex-col justify-between relative overflow-hidden group transition-all duration-300 ${staggerClass} ${className}`}
     >
@@ -100,6 +100,6 @@ export default function EventCard({
           <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
         </Link>
       </div>
-    </div>
+    </article>
   );
 }

@@ -27,6 +27,7 @@ import PrimaryButton from '../components/common/PrimaryButton';
 import SecondaryButton from '../components/common/SecondaryButton';
 import EventCard from '../components/events/EventCard';
 import ScrollReveal from '../components/common/ScrollReveal';
+import Seo from '../components/common/Seo';
 
 export default function HomePage() {
   const hasRegistrationUrl = Boolean(siteConfig.registrationUrl && siteConfig.registrationUrl.trim().length > 0);
@@ -71,7 +72,7 @@ export default function HomePage() {
         {contact.initials}
       </div>
 
-      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-1">
+      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
         {contact.type === 'faculty' ? 'Staff' : 'Student'} Coordinator
       </span>
 
@@ -92,6 +93,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo title="SYNEXIA'26 | International Symposium | EGS Pillay Engineering College" description="Join SYNEXIA'26, the international symposium by the Department of CSE & Business Systems, EGS Pillay Engineering College. Technical & non-technical events, cash prizes, food provided to all participants on October 14 & 15, 2026." />
       
       {/* ========================================================================= */}
       {/* SECTION 1 — HERO                                                          */}
@@ -114,13 +116,18 @@ export default function HomePage() {
         <div className="absolute top-36 right-8 w-20 h-[1.5px] bg-brand-navy/30 transform -rotate-12 pointer-events-none hidden md:block" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Visually-hidden page heading for document structure / SEO */}
+          <h1 className="sr-only">
+            SYNEXIA'26 International Symposium, EGS Pillay Engineering College
+          </h1>
+
           {/* Top: EGS Pillay Engineering College Institutional Header Asset */}
           <div className="mb-6 sm:mb-8 md:mb-10 flex justify-center animate-fade-up">
             <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl px-3 sm:px-6 py-3.5 sm:py-5 md:py-6 rounded-2xl bg-white border border-slate-200/90 shadow-subtle hover:border-slate-300 hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center">
               <div className="w-full flex items-center justify-center">
                 <img
                   src={siteConfig.collegeLogo || SYMPOSIUM_CONFIG.organizer.bannerImage}
-                  alt={siteConfig.collegeName}
+                  alt="EGS Pillay Engineering College"
                   className="w-full h-auto max-h-24 sm:max-h-36 md:max-h-48 lg:max-h-56 object-contain mx-auto block scale-[1.03] sm:scale-100 transition-transform duration-300"
                 />
               </div>
@@ -158,7 +165,7 @@ export default function HomePage() {
               <div className="p-4 sm:p-6 rounded-card bg-white border border-slate-200 shadow-subtle hover:border-slate-300 transition-all duration-300 scale-on-hover">
                 <img
                   src={siteConfig.synexiaLogo || SYMPOSIUM_CONFIG.logo}
-                  alt={siteConfig.symposiumName}
+                  alt="SYNEXIA association logo"
                   className="h-16 sm:h-24 md:h-28 lg:h-32 w-auto object-contain mx-auto"
                 />
               </div>
@@ -185,11 +192,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Participant Perks: Free Food & Participation Certificate */}
+            {/* Participant Perks: Food & Participation Certificate */}
             <div className="mb-8 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-semibold animate-fade-up stagger-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 shadow-sm">
                 <Utensils className="w-4 h-4 text-emerald-600" />
-                <span>Free Food Provided</span>
+                <span>Food Provided to All Participants</span>
               </div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 shadow-sm">
                 <Award className="w-4 h-4 text-blue-600" />

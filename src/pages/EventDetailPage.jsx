@@ -28,6 +28,7 @@ import EventBadge from '../components/events/EventBadge';
 import EventRuleList from '../components/events/EventRuleList';
 import PrimaryButton from '../components/common/PrimaryButton';
 import SecondaryButton from '../components/common/SecondaryButton';
+import Seo from '../components/common/Seo';
 
 export default function EventDetailPage() {
   const { eventId } = useParams();
@@ -40,6 +41,7 @@ export default function EventDetailPage() {
   if (!event) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+        <Seo title="Event Not Found | SYNEXIA'26" description="The requested SYNEXIA'26 event could not be found." />
         <h2 className="text-2xl font-bold font-display text-brand-navy mb-2">Event Not Found</h2>
         <p className="text-slate-600 mb-6">The event you are looking for does not exist or has not been listed yet.</p>
         <SecondaryButton to="/events" icon={ArrowLeft} iconPosition="left">
@@ -51,6 +53,10 @@ export default function EventDetailPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo
+        title={`${event.title} | SYNEXIA'26 Events`}
+        description={event.shortDescription || event.description}
+      />
       <PageHero
         badge={event.categoryName || event.category}
         title={event.title}
