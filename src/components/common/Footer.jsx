@@ -117,7 +117,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2.5 text-xs text-slate-300">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/80 font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-magenta" />
-              Oct 14, 2026
+              Oct 15, 2026
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-950/40 border border-emerald-800/50 text-emerald-300 font-medium">
               Food Provided to All Participants
