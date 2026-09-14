@@ -1,22 +1,28 @@
 import React from 'react';
 import { 
   MapPin, 
-  Mail, 
-  Phone, 
   Navigation, 
   ExternalLink, 
   Clock, 
-  Building2, 
-  GraduationCap, 
-  UserCheck 
+  Building2
 } from 'lucide-react';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
+import { coordinators } from '../data/coordinators';
 import PageHero from '../components/common/PageHero';
 import SectionTitle from '../components/common/SectionTitle';
+import CoordinatorCard from '../components/CoordinatorCard';
+import ScrollReveal from '../components/common/ScrollReveal';
 
 export default function ContactPage() {
-  const contacts = SYMPOSIUM_CONFIG.contacts;
   const venue = SYMPOSIUM_CONFIG.venue;
+
+  const orderedCoordinators = [
+    coordinators.president,
+    coordinators.secretary,
+    coordinators.technicalHead,
+    coordinators.nonTechnicalHead,
+    coordinators.staffCoordinator,
+  ];
 
   return (
     <div className="bg-white min-h-screen">
@@ -35,68 +41,22 @@ export default function ContactPage() {
             badge="Organizing Committee"
             badgeVariant="navy"
             title="Symposium Coordinators"
-            subtitle="Get in touch with our faculty and student coordinators for queries regarding tracks, participation, and logistics."
+            subtitle="Get in touch with our faculty and student coordinators for queries regarding tracks, participation, and logistics. Tap the number to call directly."
             align="left"
             className="mb-10"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            {/* Faculty Coordinators */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8">
-              <div className="flex items-center gap-2 mb-6">
-                <GraduationCap className="w-6 h-6 text-brand-navy" />
-                <h3 className="text-xl font-bold text-slate-900">Faculty Coordinators</h3>
-              </div>
-
-              <div className="space-y-4">
-                {contacts.facultyCoordinators.map((fac, idx) => (
-                  <div key={idx} className="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
-                    <h4 className="font-bold text-slate-900">{fac.name}</h4>
-                    <p className="text-xs text-slate-500 mb-3">{fac.role} • {fac.department}</p>
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs text-slate-600">
-                      <span className="flex items-center gap-1.5">
-                        <Phone className="w-3.5 h-3.5 text-brand-navy" />
-                        {fac.phone}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-brand-magenta" />
-                        {fac.email}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {orderedCoordinators.map((coordinator, idx) => (
+                <CoordinatorCard
+                  key={coordinator.id}
+                  coordinator={coordinator}
+                  featured={idx === 0 || coordinator.category === 'Faculty'}
+                />
+              ))}
             </div>
-
-            {/* Student Coordinators */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8">
-              <div className="flex items-center gap-2 mb-6">
-                <UserCheck className="w-6 h-6 text-brand-magenta" />
-                <h3 className="text-xl font-bold text-slate-900">Student Coordinators</h3>
-              </div>
-
-              <div className="space-y-4">
-                {contacts.studentCoordinators.map((stu, idx) => (
-                  <div key={idx} className="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
-                    <h4 className="font-bold text-slate-900">{stu.name}</h4>
-                    <p className="text-xs text-slate-500 mb-3">{stu.role}</p>
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs text-slate-600">
-                      <span className="flex items-center gap-1.5">
-                        <Phone className="w-3.5 h-3.5 text-brand-navy" />
-                        {stu.phone}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-brand-magenta" />
-                        {stu.email}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
+          </ScrollReveal>
         </section>
 
         {/* VENUE & LOCATION INFORMATION */}
