@@ -65,10 +65,10 @@ export default function HomePage() {
               {/* Mobile institutional clarity subtitle to ensure 100% legibility on small screens */}
               <div className="mt-2.5 sm:hidden text-center pt-2 border-t border-slate-100 w-full">
                 <p className="text-[11px] font-display font-black text-brand-navy tracking-wide uppercase leading-tight">
-                  E.G.S. PILLAY ENGINEERING COLLEGE (AUTONOMOUS)
+                  
                 </p>
                 <p className="text-[9px] font-mono text-slate-500 tracking-wider mt-0.5">
-                  NAAC Grade A++ • NBA Accredited • Anna University Affiliated
+                  
                 </p>
               </div>
             </div>
