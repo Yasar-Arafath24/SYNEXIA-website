@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
+import {
   ArrowRight, 
   ExternalLink, 
   Code2, 
@@ -29,6 +29,25 @@ import ScrollReveal from '../components/common/ScrollReveal';
 
 export default function HomePage() {
   const hasRegistrationUrl = Boolean(siteConfig.registrationUrl && siteConfig.registrationUrl.trim().length > 0);
+
+  const telLink = (phone) => `tel:${String(phone).replace(/[^+\d]/g, '')}`;
+
+  const contactList = [
+    ...SYMPOSIUM_CONFIG.contacts.facultyCoordinators.map((c) => ({
+      name: c.name,
+      role: c.designation || c.role,
+      phone: c.phone,
+      type: 'faculty',
+      initials: c.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
+    })),
+    ...SYMPOSIUM_CONFIG.contacts.studentCoordinators.map((c) => ({
+      name: c.name,
+      role: `${c.role} • ${c.department}`,
+      phone: c.phone,
+      type: 'student',
+      initials: c.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
+    })),
+  ];
 
   return (
     <div className="bg-white min-h-screen">
@@ -441,7 +460,66 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 4 — REGISTRATION CTA                                              */}
+      {/* SECTION 4 — CONTACT US                                                     */}
+      {/* ========================================================================= */}
+      <section id="contact" className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs font-mono font-bold tracking-wider uppercase text-brand-navy px-3 py-1 rounded-full bg-brand-navy/5 border border-brand-navy/15 inline-block mb-3">
+              Helpdesk
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-brand-navy tracking-tight mb-2">
+              Contact Us
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base">
+              Reach out to our coordinators for queries regarding tracks, participation, and logistics. Tap any contact to call directly.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
+            {contactList.map((contact, idx) => (
+              <a
+                key={idx}
+                href={telLink(contact.phone)}
+                className="brand-card p-5 flex flex-col items-center text-center relative overflow-hidden group border-slate-200 hover:border-brand-navy transition-all duration-300 hover:shadow-subtle"
+              >
+                {/* Subtle top indicator */}
+                <div className={`absolute top-0 left-0 right-0 h-[3px] ${contact.type === 'faculty' ? 'bg-brand-navy' : 'bg-brand-magenta'}`} />
+
+                <div className={`w-11 h-11 rounded-full ${
+                  contact.type === 'faculty'
+                    ? 'bg-brand-navy/10 text-brand-navy'
+                    : 'bg-brand-magenta/10 text-brand-magenta'
+                } flex items-center justify-center mb-3 font-display font-bold text-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110`}>
+                  {contact.initials}
+                </div>
+
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-1">
+                  {contact.type === 'faculty' ? 'Faculty' : 'Student'} Coordinator
+                </span>
+
+                <h3 className="text-sm font-bold font-display text-brand-navy leading-tight mb-1">
+                  {contact.name}
+                </h3>
+
+                <p className="text-[11px] text-slate-500 mb-3 leading-snug">
+                  {contact.role}
+                </p>
+
+                <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold text-brand-magenta group-hover:text-brand-navy transition-colors">
+                  <Phone className="w-3.5 h-3.5" />
+                  {contact.phone}
+                </span>
+              </a>
+            ))}
+          </div>
+
+        </ScrollReveal>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* SECTION 5 — REGISTRATION CTA                                              */}
       {/* ========================================================================= */}
       <section id="register" className="py-20 sm:py-28 bg-slate-50/80">
         <ScrollReveal className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
