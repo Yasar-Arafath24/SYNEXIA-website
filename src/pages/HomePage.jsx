@@ -16,7 +16,8 @@ import {
   Megaphone,
   Gift,
   Phone,
-  UserCheck
+  UserCheck,
+  MapPin
 } from 'lucide-react';
 import { coordinators } from '../data/coordinators';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
@@ -533,6 +534,46 @@ export default function HomePage() {
 
             <div className="max-w-xs mx-auto">
               {renderContactCard(staffContact, 'staff')}
+            </div>
+          </div>
+
+          {/* MAP — Embedded Google Map of the Venue */}
+          <div className="mt-16 max-w-5xl mx-auto">
+            <div className="brand-card p-6 sm:p-8 overflow-hidden border-slate-200">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold font-display text-brand-navy mb-1">
+                    Find Us at the Campus
+                  </h3>
+                  <p className="text-sm text-slate-600">
+                    {SYMPOSIUM_CONFIG.venue.institution} — {SYMPOSIUM_CONFIG.venue.address}
+                  </p>
+                </div>
+                <a
+                  href={SYMPOSIUM_CONFIG.venue.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-button bg-brand-navy text-white text-xs sm:text-sm font-semibold hover:bg-brand-navy-light transition-all shadow-sm"
+                >
+                  <MapPin className="w-4 h-4 text-brand-magenta-light" />
+                  <span>Open in Google Maps</span>
+                  <ExternalLink className="w-4 h-4 ml-0.5 opacity-70" />
+                </a>
+              </div>
+
+              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-subtle">
+                <iframe
+                  title={`${SYMPOSIUM_CONFIG.name} Venue Map`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(SYMPOSIUM_CONFIG.venue.institution)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="block w-full"
+                />
+              </div>
             </div>
           </div>
 
