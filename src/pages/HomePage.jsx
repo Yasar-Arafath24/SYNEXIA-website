@@ -32,22 +32,62 @@ export default function HomePage() {
 
   const telLink = (phone) => `tel:${String(phone).replace(/[^+\d]/g, '')}`;
 
-  const contactList = [
-    ...SYMPOSIUM_CONFIG.contacts.facultyCoordinators.map((c) => ({
-      name: c.name,
-      role: c.designation || c.role,
-      phone: c.phone,
-      type: 'faculty',
-      initials: c.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
-    })),
-    ...SYMPOSIUM_CONFIG.contacts.studentCoordinators.map((c) => ({
-      name: c.name,
-      role: `${c.role} • ${c.department}`,
-      phone: c.phone,
-      type: 'student',
-      initials: c.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
-    })),
-  ];
+  const studentContactList = [
+    coordinators.president,
+    coordinators.secretary,
+    coordinators.technicalHead,
+    coordinators.nonTechnicalHead,
+  ].map((c) => ({
+    name: c.name,
+    role: `${c.role} • ${c.year}`,
+    phone: c.phone,
+    type: 'student',
+    initials: c.initials,
+  }));
+
+  const staffContact = {
+    name: coordinators.staffCoordinator.name,
+    role: `${coordinators.staffCoordinator.designation} • ${coordinators.staffCoordinator.department}`,
+    phone: coordinators.staffCoordinator.phone,
+    type: 'faculty',
+    initials: coordinators.staffCoordinator.initials,
+  };
+
+  const renderContactCard = (contact, idx) => (
+    <a
+      key={idx}
+      href={telLink(contact.phone)}
+      className="brand-card p-5 flex flex-col items-center text-center relative overflow-hidden group border-slate-200 hover:border-brand-navy transition-all duration-300 hover:shadow-subtle"
+    >
+      {/* Subtle top indicator */}
+      <div className={`absolute top-0 left-0 right-0 h-[3px] ${contact.type === 'faculty' ? 'bg-brand-navy' : 'bg-brand-magenta'}`} />
+
+      <div className={`w-11 h-11 rounded-full ${
+        contact.type === 'faculty'
+          ? 'bg-brand-navy/10 text-brand-navy'
+          : 'bg-brand-magenta/10 text-brand-magenta'
+      } flex items-center justify-center mb-3 font-display font-bold text-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110`}>
+        {contact.initials}
+      </div>
+
+      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-1">
+        {contact.type === 'faculty' ? 'Staff' : 'Student'} Coordinator
+      </span>
+
+      <h3 className="text-sm font-bold font-display text-brand-navy leading-tight mb-1">
+        {contact.name}
+      </h3>
+
+      <p className="text-[11px] text-slate-500 mb-3 leading-snug">
+        {contact.role}
+      </p>
+
+      <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold text-brand-magenta group-hover:text-brand-navy transition-colors">
+        <Phone className="w-3.5 h-3.5" />
+        {contact.phone}
+      </span>
+    </a>
+  );
 
   return (
     <div className="bg-white min-h-screen">
@@ -477,42 +517,23 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
-            {contactList.map((contact, idx) => (
-              <a
-                key={idx}
-                href={telLink(contact.phone)}
-                className="brand-card p-5 flex flex-col items-center text-center relative overflow-hidden group border-slate-200 hover:border-brand-navy transition-all duration-300 hover:shadow-subtle"
-              >
-                {/* Subtle top indicator */}
-                <div className={`absolute top-0 left-0 right-0 h-[3px] ${contact.type === 'faculty' ? 'bg-brand-navy' : 'bg-brand-magenta'}`} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+            {studentContactList.map(renderContactCard)}
+          </div>
 
-                <div className={`w-11 h-11 rounded-full ${
-                  contact.type === 'faculty'
-                    ? 'bg-brand-navy/10 text-brand-navy'
-                    : 'bg-brand-magenta/10 text-brand-magenta'
-                } flex items-center justify-center mb-3 font-display font-bold text-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110`}>
-                  {contact.initials}
-                </div>
+          {/* STAFF COORDINATOR — Separated Below the Student Coordinators */}
+          <div className="mt-12">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="h-[1px] w-10 sm:w-14 bg-slate-200" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-navy/60 block">
+                Faculty Oversight
+              </span>
+              <div className="h-[1px] w-10 sm:w-14 bg-slate-200" />
+            </div>
 
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-1">
-                  {contact.type === 'faculty' ? 'Faculty' : 'Student'} Coordinator
-                </span>
-
-                <h3 className="text-sm font-bold font-display text-brand-navy leading-tight mb-1">
-                  {contact.name}
-                </h3>
-
-                <p className="text-[11px] text-slate-500 mb-3 leading-snug">
-                  {contact.role}
-                </p>
-
-                <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold text-brand-magenta group-hover:text-brand-navy transition-colors">
-                  <Phone className="w-3.5 h-3.5" />
-                  {contact.phone}
-                </span>
-              </a>
-            ))}
+            <div className="max-w-xs mx-auto">
+              {renderContactCard(staffContact, 'staff')}
+            </div>
           </div>
 
         </ScrollReveal>
