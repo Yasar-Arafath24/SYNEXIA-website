@@ -543,7 +543,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold font-display text-brand-navy mb-1">
-                    Find Us at the Campus
+                    FIND OUR CAMPUS
                   </h3>
                   <p className="text-sm text-slate-600">
                     {SYMPOSIUM_CONFIG.venue.institution} — {SYMPOSIUM_CONFIG.venue.address}
