@@ -53,28 +53,11 @@ export default function CoordinatorCard({ coordinator, featured = false, classNa
         <span className="absolute bottom-0 right-1 w-3.5 h-3.5 rounded-full bg-brand-magenta ring-2 ring-white" />
       </div>
 
-      {/* NAME — Space Grotesk Bold & Optional LinkedIn Icon */}
+      {/* NAME — Space Grotesk Bold */}
       <div className="flex items-center justify-center gap-1.5 mb-1">
         <h3 className="text-xl sm:text-2xl font-bold font-display text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors duration-200">
           {name}
         </h3>
-        {coordinator.linkedin && (
-          <a
-            href={coordinator.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${name} on LinkedIn`}
-            className="inline-flex items-center text-[#0A66C2] hover:text-[#004182] transition-colors p-1 rounded-md hover:bg-blue-50"
-          >
-            <svg 
-              className="w-4 h-4 fill-current" 
-              viewBox="0 0 24 24" 
-              aria-hidden="true"
-            >
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-            </svg>
-          </a>
-        )}
       </div>
 
       {/* ROLE */}

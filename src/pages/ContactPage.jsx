@@ -16,13 +16,14 @@ import ScrollReveal from '../components/common/ScrollReveal';
 export default function ContactPage() {
   const venue = SYMPOSIUM_CONFIG.venue;
 
-  const orderedCoordinators = [
+  const studentCoordinators = [
     coordinators.president,
     coordinators.secretary,
     coordinators.technicalHead,
     coordinators.nonTechnicalHead,
-    coordinators.staffCoordinator,
   ];
+
+  const staffCoordinator = coordinators.staffCoordinator;
 
   return (
     <div className="bg-white min-h-screen">
@@ -47,14 +48,32 @@ export default function ContactPage() {
           />
 
           <ScrollReveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {orderedCoordinators.map((coordinator, idx) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {studentCoordinators.map((coordinator, idx) => (
                 <CoordinatorCard
                   key={coordinator.id}
                   coordinator={coordinator}
-                  featured={idx === 0 || coordinator.category === 'Faculty'}
+                  featured={idx === 0}
                 />
               ))}
+            </div>
+          </ScrollReveal>
+
+          {/* STAFF COORDINATOR — Separated Below the Student Coordinators */}
+          <ScrollReveal className="mt-12">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="h-[1px] w-10 sm:w-14 bg-slate-200" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-navy/60 block">
+                Faculty Oversight
+              </span>
+              <div className="h-[1px] w-10 sm:w-14 bg-slate-200" />
+            </div>
+
+            <div className="max-w-md mx-auto">
+              <CoordinatorCard
+                coordinator={staffCoordinator}
+                featured={true}
+              />
             </div>
           </ScrollReveal>
         </section>

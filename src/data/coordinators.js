@@ -8,7 +8,7 @@
 export const coordinators = {
   president: {
     id: "president",
-    name: "SAFEEK AHMED",
+    name: "SAFEEK AHAMED",
     role: "President",
     category: "Core Team",
     year: "IV CSE&BS",
@@ -36,8 +36,7 @@ export const coordinators = {
     year: "III CSE&BS",
     phone: "+91 6385748590",
     tel: "+916385748590",
-    initials: "YA",
-    linkedin: "https://www.linkedin.com/in/yasar-arafath-365490333/"
+    initials: "YA"
   },
 
   nonTechnicalHead: {
