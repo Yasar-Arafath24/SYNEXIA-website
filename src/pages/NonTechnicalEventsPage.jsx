@@ -55,7 +55,7 @@ export default function NonTechnicalEventsPage() {
                 Schedule & Entitlements
               </span>
               <p className="text-sm sm:text-base font-bold font-display text-brand-navy">
-                All Non-Technical Events on October 14, 2026 • Offline (On-Campus)
+                All Non-Technical Events on October 15, 2026 • Offline (On-Campus)
               </p>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function NonTechnicalEventsPage() {
               <div className="pt-2 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Date: <strong className="text-slate-800">October 14, 2026</strong></span>
+                  <span>Date: <strong className="text-slate-800">October 15, 2026</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-brand-navy flex-shrink-0" />
@@ -314,7 +314,7 @@ export default function NonTechnicalEventsPage() {
               <div className="pt-2 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Date: <strong className="text-slate-800">October 14, 2026</strong></span>
+                  <span>Date: <strong className="text-slate-800">October 15, 2026</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-brand-navy flex-shrink-0" />

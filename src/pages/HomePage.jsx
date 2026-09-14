@@ -14,8 +14,11 @@ import {
   Utensils,
   Laptop,
   Megaphone,
-  Gift
+  Gift,
+  Phone,
+  UserCheck
 } from 'lucide-react';
+import { coordinators } from '../data/coordinators';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import { siteConfig } from '../data/siteConfig';
 import { technicalEvents, nonTechnicalEvents, allEvents } from '../data/events';
@@ -113,11 +116,11 @@ export default function HomePage() {
               <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200/90 shadow-subtle text-xs sm:text-sm">
                 <div className="flex items-center gap-2 text-brand-navy font-bold font-display">
                   <Calendar className="w-4 h-4 text-brand-magenta" />
-                  <span className="tracking-wide">SYMPOSIUM DATE: OCTOBER 14, 2026</span>
+                  <span className="tracking-wide">SYMPOSIUM DATES: OCTOBER 14 & 15, 2026</span>
                 </div>
                 <span className="hidden sm:inline text-slate-300">•</span>
                 <span className="text-slate-700 text-xs font-mono font-medium">
-                  PRESENTIX: <strong className="text-emerald-700">ONLINE on OCT 14</strong> | <strong className="text-brand-navy">OFFLINE on OCT 15</strong>
+                  OCT 14: <strong className="text-emerald-700">PRESENTIX ONLINE</strong> | OCT 15: <strong className="text-brand-navy">ALL EVENTS ON-CAMPUS</strong>
                 </span>
               </div>
             </div>

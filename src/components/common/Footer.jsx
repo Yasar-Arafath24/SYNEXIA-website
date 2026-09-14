@@ -81,10 +81,10 @@ export default function Footer() {
               Non-Technical Events
             </Link>
             <Link
-              to="/coordinators"
+              to="/contact"
               className="text-slate-400 hover:text-white transition-colors duration-200"
             >
-              Coordinators
+              Contact Us
             </Link>
             <Link
               to="/register"
