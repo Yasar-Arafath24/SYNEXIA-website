@@ -11,7 +11,7 @@ export const coordinators = {
     name: "SAFEEK AHAMED",
     role: "President",
     category: "Core Team",
-    year: "IV CSE&BS",
+    year: "IV CSBS",
     phone: "+91 8825939548",
     tel: "+918825939548",
     initials: "SA"
@@ -22,7 +22,7 @@ export const coordinators = {
     name: "MAHATHI",
     role: "Secretary",
     category: "Core Team",
-    year: "IV CSE&BS",
+    year: "IV CSBS",
     phone: "+91 6374186459",
     tel: "+916374186459",
     initials: "MA"
@@ -33,7 +33,7 @@ export const coordinators = {
     name: "YASAR ARAFATH",
     role: "Technical Event Head",
     category: "Event Heads",
-    year: "III CSE&BS",
+    year: "III CSBS",
     phone: "+91 6385748590",
     tel: "+916385748590",
     initials: "YA"
@@ -44,7 +44,7 @@ export const coordinators = {
     name: "BHAVANA",
     role: "Non-Technical Event Head",
     category: "Event Heads",
-    year: "III CSE&BS",
+    year: "III CSBS",
     phone: "+91 8807520087",
     tel: "+918807520087",
     initials: "BH"
@@ -55,7 +55,7 @@ export const coordinators = {
     name: "Mr. Venkateshwaran.G",
     role: "Staff Coordinator",
     designation: "Assistant Professor",
-    department: "CSE&BS",
+    department: "CSBS",
     category: "Faculty",
     phone: "+91 9865560442",
     tel: "+919865560442",
