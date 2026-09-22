@@ -17,7 +17,11 @@ import {
   Gift,
   Phone,
   UserCheck,
-  MapPin
+  MapPin,
+  Tag,
+  Ticket,
+  Check,
+  ArrowUpRight
 } from 'lucide-react';
 import { coordinators } from '../data/coordinators';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
@@ -354,6 +358,94 @@ export default function HomePage() {
                         <span>Explore Non-Technical Events</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ========================================================================= */}
+            {/* REGISTRATION FEES CARD (Clean White, High-Impact Important Card)          */}
+            {/* ========================================================================= */}
+            <div className="mt-6 max-w-2xl sm:max-w-3xl mx-auto animate-fade-up stagger-5 text-left">
+              <div className="rounded-3xl bg-white text-slate-900 border-2 border-slate-900 shadow-xl relative overflow-hidden group hover:border-brand-magenta transition-all duration-300">
+                {/* Thick Top Accent Bar with Brand Gradient */}
+                <div className="h-2 w-full bg-gradient-to-r from-brand-navy via-brand-blue to-brand-magenta" />
+
+                <div className="p-6 sm:p-8">
+                  {/* Header Row: Official Badge & Pulsing Registration Status */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-200">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-8 h-8 rounded-xl bg-brand-navy text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <Tag className="w-4 h-4 text-white" />
+                      </span>
+                      <div>
+                        <span className="text-[10px] font-mono font-extrabold uppercase tracking-widest text-brand-magenta block">
+                          Official Announcement
+                        </span>
+                        <h4 className="text-xs sm:text-sm font-extrabold font-display tracking-tight text-brand-navy">
+                          SYMPOSIUM DELEGATE FEE
+                        </h4>
+                      </div>
+                    </div>
+
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-300">
+                      <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                      REGISTRATION OPEN
+                    </span>
+                  </div>
+
+                  {/* Main Body: Headline + Centered Big Price Banner */}
+                  <div className="py-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black font-display tracking-tight text-brand-navy leading-tight">
+                        REGISTRATION FEES
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1 max-w-md leading-relaxed">
+                        One single registration fee covers full entry to all registered technical and non-technical events.
+                      </p>
+                    </div>
+
+                    {/* Prominent Price Pill: Bold, Crisp, Clean */}
+                    <div className="flex-shrink-0 self-start md:self-auto bg-slate-50 border-2 border-brand-navy/20 rounded-2xl px-6 py-4 text-center md:text-right shadow-sm group-hover:border-brand-magenta transition-colors">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-500 block mb-0.5">
+                        ENTRY FEE
+                      </span>
+                      <div className="flex items-baseline justify-center md:justify-end gap-1">
+                        <span className="text-4xl sm:text-5xl font-black font-display tracking-tight text-brand-navy">
+                          ₹100
+                        </span>
+                        <span className="text-sm sm:text-base font-display font-bold text-slate-600">
+                          / head
+                        </span>
+                      </div>
+                      <div className="mt-2 inline-flex items-center justify-center w-full px-3 py-0.5 rounded-full bg-brand-magenta text-white font-mono font-bold text-xs tracking-wider uppercase shadow-sm">
+                        tech / non-tech
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Inclusions Footer */}
+                  <div className="pt-5 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="flex items-center gap-2.5 text-xs text-slate-800 font-medium">
+                      <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      </div>
+                      <span>Technical Events Entry</span>
+                    </div>
+
+                    <div className="flex items-center gap-2.5 text-xs text-slate-800 font-medium">
+                      <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      </div>
+                      <span>Non-Technical Events Entry</span>
+                    </div>
+
+                    <div className="flex items-center gap-2.5 text-xs text-slate-900 font-bold">
+                      <div className="w-5 h-5 rounded-full bg-brand-magenta/15 text-brand-magenta flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      </div>
+                      <span className="text-brand-magenta">Food and Certificate will be provided</span>
                     </div>
                   </div>
                 </div>

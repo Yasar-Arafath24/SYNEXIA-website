@@ -63,8 +63,8 @@ export const SYMPOSIUM_CONFIG = {
   registration: {
     isOpen: Boolean(siteConfig.registrationUrl && siteConfig.registrationUrl.length > 0),
     deadline: "October 12, 2026",
-    fee: "Free Registration",
-    symposiumDate: "October 14, 2026",
+    fee: "₹100 per head (tech / non-tech) • Free for Online PRESENTIX",
+    symposiumDate: "October 14 & 15, 2026",
     googleFormUrl: siteConfig.registrationUrl,
     qrCodeImage: siteConfig.qrCodePath,
     benefits: [
