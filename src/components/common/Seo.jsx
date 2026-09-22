@@ -7,7 +7,7 @@ import { useEffect } from 'react';
  * Renders nothing to the DOM.
  */
 const DEFAULT_TITLE = "SYNEXIA'26 | International Symposium | EGS Pillay Engineering College";
-const DEFAULT_DESCRIPTION = "SYNEXIA'26 - International Symposium organized by the Department of Computer Science Engineering and Business Systems, E.G.S. Pillay Engineering College. Technical & non-technical events on October 14 & 15, 2026.";
+const DEFAULT_DESCRIPTION = "SYNEXIA'26 - International Symposium organized by the Department of Computer Science and Business Systems, E.G.S. Pillay Engineering College. Technical & non-technical events on October 14 & 15, 2026.";
 
 export default function Seo({ title, description }) {
   useEffect(() => {

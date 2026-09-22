@@ -39,7 +39,7 @@ export default function EventsPage() {
           <div>
             <span className="font-semibold text-slate-900">Event Track Announcement Status:</span>
             <span className="ml-1">
-              The Department of Computer Science Engineering and Business Systems is finalizing the official event titles, problem statements, and judging panels. Track placeholders are structured below and will update automatically once official brochures are published.
+              The Department of Computer Science and Business Systems is finalizing the official event titles, problem statements, and judging panels. Track placeholders are structured below and will update automatically once official brochures are published.
             </span>
           </div>
         </div>

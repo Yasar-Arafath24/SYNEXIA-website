@@ -184,7 +184,7 @@ export default function DesignSystemPage() {
                 Section Heading — Space Grotesk Bold (28px - 36px)
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-brand-navy tracking-tight">
-                Department of Computer Science Engineering & Business Systems
+                Department of Computer Science & Business Systems
               </h2>
             </div>
 

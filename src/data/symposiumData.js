@@ -55,8 +55,8 @@ export const SYMPOSIUM_CONFIG = {
     regulatory: "Approved by AICTE, New Delhi | Recognized by UGC",
     bannerImage: siteConfig.collegeLogo,
     department: siteConfig.departmentName,
-    departmentShort: "Dept. of CSE & Business Systems",
-    departmentOverview: "The Department of Computer Science Engineering and Business Systems at EGS Pillay Engineering College bridges computation, artificial intelligence, and corporate enterprise strategy.",
+    departmentShort: "Dept. of Computer Science & Business Systems",
+    departmentOverview: "The Department of Computer Science and Business Systems at EGS Pillay Engineering College bridges computation, artificial intelligence, and corporate enterprise strategy.",
   },
 
   // Centralized Registration Information (Tied to siteConfig.js)

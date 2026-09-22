@@ -1,7 +1,7 @@
 /**
  * Official Coordinators Data for SYNEXIA'26
  * 
- * Department of Computer Science Engineering and Business Systems
+ * Department of Computer Science and Business Systems
  * E.G.S. Pillay Engineering College
  */
 

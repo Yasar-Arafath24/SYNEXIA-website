@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   collegeName: "EGS PILLAY ENGINEERING COLLEGE",
-  departmentName: "Department of Computer Science Engineering and Business Systems",
+  departmentName: "Department of Computer Science and Business Systems",
   symposiumName: "SYNEXIA'26",
   symposiumDate: "October 14 & 15, 2026",
   symposiumDateDisplay: "October 14 & 15, 2026",
