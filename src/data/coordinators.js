@@ -14,7 +14,8 @@ export const coordinators = {
     year: "IV CSBS",
     phone: "+91 8825939548",
     tel: "+918825939548",
-    initials: "SA"
+    initials: "SA",
+    image: "/assets/safeek-ahamed.png"
   },
 
   secretary: {
@@ -25,7 +26,8 @@ export const coordinators = {
     year: "IV CSBS",
     phone: "+91 6374186459",
     tel: "+916374186459",
-    initials: "MA"
+    initials: "MA",
+    image: "/assets/mahathi.png"
   },
 
   technicalHead: {
@@ -36,7 +38,8 @@ export const coordinators = {
     year: "III CSBS",
     phone: "+91 6385748590",
     tel: "+916385748590",
-    initials: "YA"
+    initials: "YA",
+    image: "/assets/yasar-arafath.jpg"
   },
 
   nonTechnicalHead: {
@@ -47,7 +50,8 @@ export const coordinators = {
     year: "III CSBS",
     phone: "+91 8807520087",
     tel: "+918807520087",
-    initials: "BH"
+    initials: "BH",
+    image: "/assets/bhavana.png"
   },
 
   staffCoordinator: {
@@ -59,6 +63,7 @@ export const coordinators = {
     category: "Faculty",
     phone: "+91 9865560442",
     tel: "+919865560442",
-    initials: "VG"
+    initials: "VG",
+    image: "/assets/venkateshwaran.jpg"
   }
 };

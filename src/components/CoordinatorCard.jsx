@@ -23,7 +23,8 @@ export default function CoordinatorCard({ coordinator, featured = false, classNa
     department,
     phone,
     tel,
-    initials
+    initials,
+    image
   } = coordinator;
 
   const cleanTel = tel || (phone ? phone.replace(/[^+\d]/g, '') : '');
@@ -37,17 +38,25 @@ export default function CoordinatorCard({ coordinator, featured = false, classNa
       {/* Top Subtle Brand Accent Line (Activates smoothly on hover) */}
       <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-brand-navy via-brand-blue to-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
 
-      {/* INTENTIONALLY DESIGNED INITIALS AVATAR */}
+      {/* AVATAR OR PHOTO */}
       <div className="relative mb-5">
-        <div
-          className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center font-display font-extrabold text-2xl sm:text-3xl tracking-tight transition-all duration-300 select-none ${
-            featured
-              ? 'bg-brand-navy text-white ring-2 ring-brand-magenta/60 ring-offset-4 ring-offset-white shadow-sm group-hover:ring-brand-magenta'
-              : 'bg-slate-50 text-brand-navy border-2 border-brand-navy/15 ring-2 ring-brand-magenta/30 ring-offset-2 ring-offset-white group-hover:border-brand-magenta group-hover:text-brand-magenta'
-          }`}
-        >
-          {initials || name?.slice(0, 2).toUpperCase()}
-        </div>
+        {image ? (
+          <img
+            src={image}
+            alt={name}
+            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-top ring-2 ring-brand-magenta/60 ring-offset-4 ring-offset-white shadow-sm group-hover:ring-brand-magenta transition-all duration-300"
+          />
+        ) : (
+          <div
+            className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center font-display font-extrabold text-2xl sm:text-3xl tracking-tight transition-all duration-300 select-none ${
+              featured
+                ? 'bg-brand-navy text-white ring-2 ring-brand-magenta/60 ring-offset-4 ring-offset-white shadow-sm group-hover:ring-brand-magenta'
+                : 'bg-slate-50 text-brand-navy border-2 border-brand-navy/15 ring-2 ring-brand-magenta/30 ring-offset-2 ring-offset-white group-hover:border-brand-magenta group-hover:text-brand-magenta'
+            }`}
+          >
+            {initials || name?.slice(0, 2).toUpperCase()}
+          </div>
+        )}
 
         {/* Small diagonal geometric marker on avatar */}
         <span className="absolute bottom-0 right-1 w-3.5 h-3.5 rounded-full bg-brand-magenta ring-2 ring-white" />

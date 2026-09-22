@@ -45,6 +45,7 @@ export default function HomePage() {
     phone: c.phone,
     type: 'student',
     initials: c.initials,
+    image: c.image,
   }));
 
   const staffContact = {
@@ -53,6 +54,7 @@ export default function HomePage() {
     phone: coordinators.staffCoordinator.phone,
     type: 'faculty',
     initials: coordinators.staffCoordinator.initials,
+    image: coordinators.staffCoordinator.image,
   };
 
   const renderContactCard = (contact, idx) => (
@@ -64,13 +66,21 @@ export default function HomePage() {
       {/* Subtle top indicator */}
       <div className={`absolute top-0 left-0 right-0 h-[3px] ${contact.type === 'faculty' ? 'bg-brand-navy' : 'bg-brand-magenta'}`} />
 
-      <div className={`w-11 h-11 rounded-full ${
-        contact.type === 'faculty'
-          ? 'bg-brand-navy/10 text-brand-navy'
-          : 'bg-brand-magenta/10 text-brand-magenta'
-      } flex items-center justify-center mb-3 font-display font-bold text-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110`}>
-        {contact.initials}
-      </div>
+      {contact.image ? (
+        <img
+          src={contact.image}
+          alt={contact.name}
+          className="w-11 h-11 rounded-full object-cover object-top mb-3 ring-2 ring-brand-magenta/40 transition-transform duration-300 group-hover:scale-110"
+        />
+      ) : (
+        <div className={`w-11 h-11 rounded-full ${
+          contact.type === 'faculty'
+            ? 'bg-brand-navy/10 text-brand-navy'
+            : 'bg-brand-magenta/10 text-brand-magenta'
+        } flex items-center justify-center mb-3 font-display font-bold text-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110`}>
+          {contact.initials}
+        </div>
+      )}
 
       <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
         {contact.type === 'faculty' ? 'Staff' : 'Student'} Coordinator
