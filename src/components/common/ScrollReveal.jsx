@@ -13,6 +13,7 @@ export default function ScrollReveal({
   children, 
   className = '', 
   delay = 0,
+  variant = 'fade-up',
   as: Component = 'div',
   threshold = 0.1,
   rootMargin = '0px 0px -40px 0px',

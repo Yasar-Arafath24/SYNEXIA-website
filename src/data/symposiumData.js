@@ -33,10 +33,11 @@ export const SYMPOSIUM_CONFIG = {
     certificate: "Participation Certificate provided for all registered participants",
   },
 
-  // Social Links
+  // Social & Official Links
   social: {
     instagram: siteConfig.instagramUrl,
     instagramHandle: siteConfig.instagramHandle,
+    email: siteConfig.email || "synexia.csbs@gmail.com",
   },
   
   venue: {
@@ -85,7 +86,7 @@ export const SYMPOSIUM_CONFIG = {
 
   // Contact Information (Derived from official coordinators)
   contacts: {
-    generalEmail: "",
+    generalEmail: siteConfig.email || "synexia.csbs@gmail.com",
     helplinePhone: coordinators.president.phone,
     facultyCoordinators: [
       {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Mail } from 'lucide-react';
 import { SYMPOSIUM_CONFIG } from '../../data/symposiumData';
 import { siteConfig } from '../../data/siteConfig';
 
@@ -39,6 +39,7 @@ function LinkedInIcon({ className = "w-3.5 h-3.5" }) {
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const instagramUrl = siteConfig.instagramUrl || "https://www.instagram.com/egs_synexia?stkn=djljZ3V5YXdxdXlp";
+  const emailAddress = siteConfig.email || "synexia.csbs@gmail.com";
 
   return (
     <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
@@ -97,9 +98,9 @@ export default function Footer() {
 
         {/* Social & Key Highlights Bar */}
         <div className="py-6 border-b border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
             <span className="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase">
-              Official Social Link:
+              Official Links:
             </span>
             <a
               href={instagramUrl}
@@ -111,6 +112,15 @@ export default function Footer() {
               <InstagramIcon className="w-3.5 h-3.5 text-pink-400 group-hover:scale-110 transition-transform duration-200" />
               <span>@egs_synexia</span>
               <ExternalLink className="w-3 h-3 opacity-60 group-hover:opacity-100" />
+            </a>
+
+            <a
+              href={`mailto:${emailAddress}`}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700 hover:border-brand-magenta/60 text-slate-200 hover:text-white transition-all duration-200 text-xs font-semibold group shadow-sm"
+              aria-label={`Official SYNEXIA Email (${emailAddress})`}
+            >
+              <Mail className="w-3.5 h-3.5 text-brand-magenta-light group-hover:scale-110 transition-transform duration-200" />
+              <span>{emailAddress}</span>
             </a>
           </div>
 

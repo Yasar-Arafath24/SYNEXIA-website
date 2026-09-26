@@ -74,10 +74,12 @@ export default function CoordinatorsPage() {
             <CoordinatorCard 
               coordinator={president} 
               featured={true}
+              size="lg"
             />
             <CoordinatorCard 
               coordinator={secretary} 
               featured={true}
+              size="lg"
             />
           </div>
         </ScrollReveal>
@@ -103,10 +105,12 @@ export default function CoordinatorsPage() {
             <CoordinatorCard 
               coordinator={technicalHead} 
               featured={false}
+              size="lg"
             />
             <CoordinatorCard 
               coordinator={nonTechnicalHead} 
               featured={false}
+              size="lg"
             />
           </div>
         </ScrollReveal>
@@ -132,6 +136,7 @@ export default function CoordinatorsPage() {
             <CoordinatorCard 
               coordinator={staffCoordinator} 
               featured={true}
+              size="lg"
             />
           </div>
         </ScrollReveal>

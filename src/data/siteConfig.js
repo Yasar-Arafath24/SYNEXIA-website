@@ -16,6 +16,7 @@ export const siteConfig = {
   presentixOfflineDate: "October 15, 2026",
   instagramUrl: "https://www.instagram.com/egs_synexia?stkn=djljZ3V5YXdxdXlp",
   instagramHandle: "@egs_synexia",
+  email: "synexia.csbs@gmail.com",
   freeFoodProvided: true,
   participationCertificateProvided: true,
   registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfaJg0ZhVt-9srKv5xhElbSQy4mYO_BuHc9EoDbw8oE5Wib-w/viewform?usp=dialog",

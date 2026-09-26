@@ -56,6 +56,7 @@ export default function ContactPage() {
                   key={coordinator.id}
                   coordinator={coordinator}
                   featured={idx === 0}
+                  size="md"
                 />
               ))}
             </div>
@@ -75,6 +76,7 @@ export default function ContactPage() {
               <CoordinatorCard
                 coordinator={staffCoordinator}
                 featured={true}
+                size="lg"
               />
             </div>
           </ScrollReveal>

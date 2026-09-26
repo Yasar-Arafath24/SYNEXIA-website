@@ -65,42 +65,64 @@ export default function HomePage() {
     <a
       key={idx}
       href={telLink(contact.phone)}
-      className="brand-card p-5 flex flex-col items-center text-center relative overflow-hidden group border-slate-200 hover:border-brand-navy transition-all duration-300 hover:shadow-subtle"
+      className="brand-card p-6 flex flex-col items-center text-center relative overflow-hidden group border-slate-200 hover:border-brand-magenta/40 hover:-translate-y-1.5 transition-all duration-300 hover:shadow-hover-card"
     >
-      {/* Subtle top indicator */}
-      <div className={`absolute top-0 left-0 right-0 h-[3px] ${contact.type === 'faculty' ? 'bg-brand-navy' : 'bg-brand-magenta'}`} />
+      {/* Top indicator with brand gradient */}
+      <div className={`absolute top-0 left-0 right-0 h-[3px] ${contact.type === 'faculty' ? 'bg-gradient-to-r from-brand-navy via-brand-blue to-brand-navy' : 'bg-gradient-to-r from-brand-navy via-brand-blue to-brand-magenta'}`} />
 
-      {contact.image ? (
-        <img
-          src={contact.image}
-          alt={contact.name}
-          className="w-11 h-11 rounded-full object-cover object-top mb-3 ring-2 ring-brand-magenta/40 transition-transform duration-300 group-hover:scale-110"
-        />
-      ) : (
-        <div className={`w-11 h-11 rounded-full ${
-          contact.type === 'faculty'
-            ? 'bg-brand-navy/10 text-brand-navy'
-            : 'bg-brand-magenta/10 text-brand-magenta'
-        } flex items-center justify-center mb-3 font-display font-bold text-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110`}>
-          {contact.initials}
+      {/* Diagonal card sheen on hover */}
+      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+      {/* Photo with Halo Ring */}
+      <div className="relative mb-4">
+        {/* Glow */}
+        <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-brand-navy/30 via-brand-blue/20 to-brand-magenta/30 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500 ease-out pointer-events-none" />
+
+        <div className="relative p-1 rounded-full bg-gradient-to-tr from-brand-navy/80 via-brand-blue to-brand-magenta ring-2 ring-white shadow-sm transition-transform duration-500 ease-out group-hover:scale-105">
+          {contact.image ? (
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white/90">
+              <img
+                src={contact.image}
+                alt={contact.name}
+                loading="lazy"
+                className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-108"
+              />
+            </div>
+          ) : (
+            <div className={`w-24 h-24 sm:w-28 sm:h-28 rounded-full ${
+              contact.type === 'faculty'
+                ? 'bg-brand-navy text-white'
+                : 'bg-slate-50 text-brand-navy border border-brand-navy/15'
+            } flex items-center justify-center font-display font-extrabold text-2xl tracking-tight transition-transform duration-300`}>
+              {contact.initials}
+            </div>
+          )}
         </div>
-      )}
 
-      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
+        {/* Small status dot */}
+        <span 
+          aria-hidden="true"
+          className="absolute bottom-0 right-1.5 w-3.5 h-3.5 rounded-full bg-brand-magenta ring-2 ring-white shadow-sm flex items-center justify-center"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+        </span>
+      </div>
+
+      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-brand-magenta px-2 py-0.5 rounded-full bg-brand-magenta/5 border border-brand-magenta/15 mb-2">
         {contact.type === 'faculty' ? 'Staff' : 'Student'} Coordinator
       </span>
 
-      <h3 className="text-sm font-bold font-display text-brand-navy leading-tight mb-1">
+      <h3 className="text-base sm:text-lg font-bold font-display text-brand-navy leading-tight mb-1 group-hover:text-brand-blue transition-colors">
         {contact.name}
       </h3>
 
-      <p className="text-[11px] text-slate-500 mb-3 leading-snug">
+      <p className="text-xs text-slate-500 mb-4 leading-snug">
         {contact.role}
       </p>
 
-      <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold text-brand-magenta group-hover:text-brand-navy transition-colors">
-        <Phone className="w-3.5 h-3.5" />
-        {contact.phone}
+      <span className="mt-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-button bg-slate-50 border border-slate-200 group-hover:border-brand-navy group-hover:bg-brand-navy group-hover:text-white text-xs font-mono font-medium text-slate-700 transition-all duration-200">
+        <Phone className="w-3.5 h-3.5 text-brand-magenta group-hover:text-brand-magenta-light transition-colors" />
+        <span>{contact.phone}</span>
       </span>
     </a>
   );
