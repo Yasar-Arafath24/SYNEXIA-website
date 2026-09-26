@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
+import LoadingScreen from './components/common/LoadingScreen';
 import HomePage from './pages/HomePage';
 import EventsPage from './pages/EventsPage';
 import TechnicalEventsPage from './pages/TechnicalEventsPage';
@@ -15,8 +16,17 @@ import DesignSystemPage from './pages/DesignSystemPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <Router>
+    <>
+      {isLoading && (
+        <LoadingScreen 
+          duration={3000} 
+          onComplete={() => setIsLoading(false)} 
+        />
+      )}
+      <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -40,5 +50,6 @@ export default function App() {
         </Route>
       </Routes>
     </Router>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ExternalLink } from 'lucide-react';
 import { NAV_LINKS } from '../../data/navigationData';
 import { SYMPOSIUM_CONFIG } from '../../data/symposiumData';
 import { siteConfig } from '../../data/siteConfig';
@@ -8,13 +8,23 @@ import { siteConfig } from '../../data/siteConfig';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
   const toggleRef = useRef(null);
   const menuRef = useRef(null);
 
-  // Track scroll position for subtle elevation
+  const registrationUrl = siteConfig.registrationUrl && siteConfig.registrationUrl.trim().length > 0 
+    ? siteConfig.registrationUrl 
+    : '/register';
+  const isExternalReg = registrationUrl.startsWith('http');
+
+  // Track scroll position for subtle elevation and reading progress
   useEffect(() => {
     const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        setScrollProgress(Math.min(100, Math.max(0, (window.scrollY / totalScroll) * 100)));
+      }
       if (window.scrollY > 15) {
         setIsScrolled(true);
       } else {
@@ -114,37 +124,73 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  `relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${
                     isActive
-                      ? 'text-brand-navy font-bold bg-slate-100/90'
+                      ? 'text-brand-navy font-bold bg-brand-navy/5'
                       : 'text-slate-600 hover:text-brand-navy hover:bg-slate-50'
                   }`
                 }
               >
-                {link.label}
+                {({ isActive }) => (
+                  <>
+                    <span>{link.label}</span>
+                    <span 
+                      aria-hidden="true"
+                      className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-brand-magenta transition-all duration-300 ${
+                        isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                      }`} 
+                    />
+                  </>
+                )}
               </NavLink>
             ))}
           </nav>
 
           {/* RIGHT: Register button (visually stands out using SYNEXIA magenta/navy branding) */}
           <div className="hidden md:flex items-center">
-            <Link
-              to="/register"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl bg-brand-navy text-white border border-brand-navy/60 hover:border-brand-magenta hover:bg-brand-navy-light hover:shadow-subtle transition-all duration-300 active:scale-[0.98] group"
-            >
-              <span>Register</span>
-              <ArrowRight className="w-4 h-4 text-brand-magenta-light transition-transform duration-300 group-hover:translate-x-0.5" />
-            </Link>
+            {isExternalReg ? (
+              <a
+                href={registrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-flex items-center gap-2 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl bg-brand-navy text-white border border-brand-navy/60 hover:border-brand-magenta hover:bg-brand-navy-light hover:shadow-magenta-glow transition-all duration-300 active:scale-[0.98] group shadow-subtle cursor-pointer"
+                aria-label="Register for SYNEXIA'26 (Opens official registration form)"
+              >
+                <span>Register</span>
+                <ExternalLink className="w-4 h-4 text-brand-magenta-light transition-transform duration-300 group-hover:scale-110" />
+              </a>
+            ) : (
+              <Link
+                to="/register"
+                className="relative inline-flex items-center gap-2 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl bg-brand-navy text-white border border-brand-navy/60 hover:border-brand-magenta hover:bg-brand-navy-light hover:shadow-subtle transition-all duration-300 active:scale-[0.98] group"
+              >
+                <span>Register</span>
+                <ArrowRight className="w-4 h-4 text-brand-magenta-light transition-transform duration-300 group-hover:translate-x-0.5" />
+              </Link>
+            )}
           </div>
 
-          {/* MOBILE: Clean Hamburger Toggle */}
+          {/* MOBILE: Clean Hamburger Toggle & Register Button */}
           <div className="flex md:hidden items-center gap-2">
-            <Link
-              to="/register"
-              className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-navy text-white hover:bg-brand-navy-light border border-brand-navy"
-            >
-              Register
-            </Link>
+            {isExternalReg ? (
+              <a
+                href={registrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-navy text-white hover:bg-brand-navy-light border border-brand-navy shadow-xs active:scale-95 transition-all"
+                aria-label="Register for SYNEXIA'26"
+              >
+                <span>Register</span>
+                <ExternalLink className="w-3 h-3 text-brand-magenta-light" />
+              </a>
+            ) : (
+              <Link
+                to="/register"
+                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-navy text-white hover:bg-brand-navy-light border border-brand-navy"
+              >
+                Register
+              </Link>
+            )}
             <button
               ref={toggleRef}
               onClick={toggleMenu}
@@ -160,6 +206,13 @@ export default function Navbar() {
 
         </div>
       </div>
+
+      {/* Interactive Scroll Progress Neon Line right below the sticky header */}
+      <div 
+        aria-hidden="true" 
+        className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-brand-blue via-brand-magenta to-brand-magenta-light transition-all duration-150 ease-out"
+        style={{ width: `${scrollProgress}%` }}
+      />
 
       {/* MOBILE MENU: Smooth animated drawer */}
       <div
@@ -190,20 +243,33 @@ export default function Navbar() {
 
           {/* Mobile Register Link */}
           <div className="pt-3 mt-2 border-t border-slate-100">
-            <NavLink
-              to="/register"
-              onClick={closeMenu}
-              className={({ isActive }) =>
-                `flex items-center justify-between px-3.5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                  isActive
-                    ? 'bg-brand-magenta text-white shadow-magenta-glow'
-                    : 'bg-brand-navy text-white hover:bg-brand-navy-light'
-                }`
-              }
-            >
-              <span>Register</span>
-              <ArrowRight className="w-4 h-4 text-brand-magenta-light" />
-            </NavLink>
+            {isExternalReg ? (
+              <a
+                href={registrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-semibold text-sm bg-brand-navy text-white hover:bg-brand-navy-light shadow-sm transition-all"
+              >
+                <span>Register Online</span>
+                <ExternalLink className="w-4 h-4 text-brand-magenta-light" />
+              </a>
+            ) : (
+              <NavLink
+                to="/register"
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `flex items-center justify-between px-3.5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                    isActive
+                      ? 'bg-brand-magenta text-white shadow-magenta-glow'
+                      : 'bg-brand-navy text-white hover:bg-brand-navy-light'
+                  }`
+                }
+              >
+                <span>Register</span>
+                <ArrowRight className="w-4 h-4 text-brand-magenta-light" />
+              </NavLink>
+            )}
           </div>
         </div>
       </div>

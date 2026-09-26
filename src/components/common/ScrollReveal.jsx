@@ -61,7 +61,7 @@ export default function ScrollReveal({
     <Component
       ref={ref}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-      className={`reveal-on-scroll ${isRevealed ? 'is-revealed' : ''} ${className}`}
+      className={`reveal-on-scroll reveal-${variant} ${isRevealed ? 'is-revealed' : ''} ${className}`}
       {...props}
     >
       {children}

@@ -27,12 +27,12 @@ export default function EventCard({
   return (
     <article
       id={event.slug || event.id}
-      className={`brand-card p-6 sm:p-7 pl-7 sm:pl-8 flex flex-col justify-between relative overflow-hidden group transition-all duration-300 ${staggerClass} ${className}`}
+      className={`brand-card p-6 sm:p-7 pl-7 sm:pl-8 flex flex-col justify-between relative overflow-hidden group ${staggerClass} ${className}`}
     >
       {/* Asymmetric Accent: Thin Magenta Vertical Line on Left */}
-      <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta transition-all duration-300 group-hover:w-[4.5px]" />
+      <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta transition-all duration-500 ease-out group-hover:w-[4.5px] group-hover:shadow-[0_0_10px_rgba(192,19,104,0.3)] z-10" />
 
-      <div>
+      <div className="relative z-10">
         {/* Top Meta: Small Navy Event Number & Category Badge */}
         <div className="flex items-center justify-between gap-2 mb-3">
           <span className="text-xs font-mono font-bold tracking-wider text-brand-navy">
@@ -91,7 +91,7 @@ export default function EventCard({
       </div>
 
       {/* Action CTA: View Details */}
-      <div className="pt-2 border-t border-slate-100">
+      <div className="pt-2 border-t border-slate-100 relative z-10">
         <Link
           to={targetUrl}
           className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-button bg-slate-50 hover:bg-brand-navy text-brand-navy hover:text-white text-xs sm:text-sm font-semibold transition-all duration-200 border border-slate-200 group-hover:border-brand-navy"
