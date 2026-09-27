@@ -6,9 +6,7 @@ import {
   Code2, 
   Sparkles, 
   Trophy, 
-  Layers, 
   CheckCircle2, 
-  AlertCircle,
   Calendar,
   Award,
   Utensils,
@@ -16,20 +14,21 @@ import {
   Megaphone,
   Gift,
   Phone,
-  UserCheck,
   MapPin,
   Tag,
   Ticket,
   Check,
-  ArrowUpRight
+  ArrowUpRight,
+  Building2
 } from 'lucide-react';
 import { coordinators } from '../data/coordinators';
 import { SYMPOSIUM_CONFIG } from '../data/symposiumData';
 import { siteConfig } from '../data/siteConfig';
-import { technicalEvents, nonTechnicalEvents, allEvents } from '../data/events';
+import { technicalEvents, nonTechnicalEvents } from '../data/events';
 import PrimaryButton from '../components/common/PrimaryButton';
 import SecondaryButton from '../components/common/SecondaryButton';
 import EventCard from '../components/events/EventCard';
+import RobotMascot from '../components/common/RobotMascot';
 import ScrollReveal from '../components/common/ScrollReveal';
 import Seo from '../components/common/Seo';
 
@@ -234,6 +233,32 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 shadow-sm">
                 <Award className="w-4 h-4 text-blue-600" />
                 <span>Participation Certificate for All</span>
+              </div>
+            </div>
+
+            {/* Official Robot Mascot Element on Landing Page */}
+            <div className="mb-8 flex justify-center items-center animate-fade-up stagger-4">
+              <div className="relative inline-flex items-center gap-3.5 sm:gap-4 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white border border-slate-200/90 shadow-subtle hover:border-brand-magenta/40 hover:shadow-md transition-all duration-300">
+                <div className="relative">
+                  <RobotMascot 
+                    size="md" 
+                    floating={true} 
+                    speechBubble="Welcome to SYNEXIA'26! 👍" 
+                    speechPosition="top" 
+                  />
+                </div>
+                <div className="text-left">
+                  <div className="flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-brand-magenta">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Official AI Mascot</span>
+                  </div>
+                  <h3 className="text-sm sm:text-base font-extrabold font-display text-brand-navy leading-tight">
+                    Meet SYNEX — Your Symposium Guide
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium mt-0.5">
+                    5 Exciting Tracks • Single ₹100 Delegate Fee • Food & Certificates Included
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -467,12 +492,196 @@ export default function HomePage() {
                       <span className="text-brand-magenta">Food and Certificate will be provided</span>
                     </div>
                   </div>
+
+                  {/* Mascot Robot giving thumbs-up to ₹100 registration fee */}
+                  <div className="absolute -bottom-1 -right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+                    <RobotMascot 
+                      size="md" 
+                      flip={true} 
+                      className="opacity-80 group-hover:opacity-100 transition-opacity" 
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* SECTION 1.5 — ABOUT SYNEXIA'26 (Below Landing Page & Above Explore)       */}
+      {/* ========================================================================= */}
+      <section id="about" className="relative py-20 sm:py-28 bg-white border-b border-slate-200 overflow-hidden">
+        {/* Subtle low-transparency campus watermark background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
+          <img
+            src="/assets/college-campus.png"
+            alt=""
+            className="w-full h-full object-cover object-center opacity-[0.05] filter grayscale contrast-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white" />
+        </div>
+
+        <ScrollReveal className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* LEFT COLUMN: Narrative & Details */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy/5 border border-brand-navy/15 text-brand-navy text-xs font-mono font-bold tracking-wider uppercase">
+                <Sparkles className="w-3.5 h-3.5 text-brand-magenta" />
+                <span>About The Symposium</span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-brand-navy tracking-tight leading-tight">
+                Empowering Visionary Minds at <span className="bg-gradient-to-r from-brand-navy via-brand-blue to-brand-magenta bg-clip-text text-transparent">SYNEXIA'26</span>
+              </h2>
+
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+                <strong className="text-brand-navy font-semibold">SYNEXIA'26</strong> is an International Symposium organized by the Department of Computer Science and Business Systems (CSBS) at EGS Pillay Engineering College, Nagapattinam. Scheduled for October 14 and 15, 2026, the two-day event features a hybrid format with an online paper presentation on day one and full on-campus competitions on day two. The symposium offers a single ₹100 registration fee covering full access to all registered tracks, along with guaranteed certificates and food for all participants.
+              </p>
+
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                The event includes five major competitions divided across technical and non-technical domains. Technical tracks feature CODENEX (an AI-driven hackathon with cash prizes up to ₹5,000), SYNTAX STRIKE (a multi-level debugging challenge), and PRESENTIX (an article presentation contest that is completely free to join in its online mode). Non-technical offerings include NEXAHUNT, a team logic and treasure hunt, and SynerX Auction, a cricket squad bidding strategy game.
+              </p>
+
+              {/* 4 Feature Badges in 2x2 Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-2xs hover:border-brand-navy/30 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-brand-navy/10 text-brand-navy flex items-center justify-center shrink-0">
+                    <Ticket className="w-5 h-5 stroke-[2.2]" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">Single ₹100 Entry Fee</div>
+                    <div className="text-[11px] text-slate-500">Access to all registered tracks</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-2xs hover:border-brand-magenta/30 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-brand-magenta/10 text-brand-magenta flex items-center justify-center shrink-0">
+                    <Utensils className="w-5 h-5 stroke-[2.2]" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">Guaranteed Food & Certificate</div>
+                    <div className="text-[11px] text-slate-500">Provided for all registered participants</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-2xs hover:border-brand-navy/30 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-brand-navy/10 text-brand-navy flex items-center justify-center shrink-0">
+                    <Laptop className="w-5 h-5 stroke-[2.2]" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">Hybrid Event Structure</div>
+                    <div className="text-[11px] text-slate-500">Day 1 Online • Day 2 On-Campus</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-2xs hover:border-brand-magenta/30 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-brand-magenta/10 text-brand-magenta flex items-center justify-center shrink-0">
+                    <Trophy className="w-5 h-5 stroke-[2.2]" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">5 Major Competitions</div>
+                    <div className="text-[11px] text-slate-500">Technical & Non-Technical Domains</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Links */}
+              <div className="flex flex-wrap items-center gap-4 pt-3">
+                {hasRegistrationUrl ? (
+                  <a
+                    href={siteConfig.registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl bg-brand-navy text-white hover:bg-brand-navy-light shadow-subtle hover:shadow-md transition-all active:scale-[0.98]"
+                  >
+                    <span>Register for ₹100</span>
+                    <ExternalLink className="w-4 h-4 text-brand-magenta-light" />
+                  </a>
+                ) : (
+                  <Link
+                    to="/register"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl bg-brand-navy text-white hover:bg-brand-navy-light shadow-subtle hover:shadow-md transition-all active:scale-[0.98]"
+                  >
+                    <span>Register for ₹100</span>
+                    <ArrowRight className="w-4 h-4 text-brand-magenta-light" />
+                  </Link>
+                )}
+
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl bg-white text-slate-800 border border-slate-200 hover:border-brand-navy/40 hover:bg-slate-50 hover:text-brand-navy transition-all active:scale-[0.98]"
+                >
+                  <span>Institutional Legacy</span>
+                  <ArrowUpRight className="w-4 h-4 text-brand-magenta" />
+                </Link>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN: Featured College Photo Card with Low Transparency */}
+            <div className="lg:col-span-5">
+              <div className="relative group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-soft transition-all duration-500 hover:shadow-card-hover">
+                
+                {/* Photo showcase with low transparency overlay */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900/5">
+                  <img
+                    src="/assets/college-campus.png"
+                    alt="EGS Pillay Engineering College Campus, Nagapattinam"
+                    className="w-full h-full object-cover object-center opacity-30 group-hover:opacity-45 transition-all duration-700 filter contrast-110 saturate-[0.85] group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  {/* Soft white gradient scrim for UI harmony */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent pointer-events-none" />
+
+                  {/* Top Floating Badge */}
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 shadow-xs text-xs font-semibold text-brand-navy">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Host Institution</span>
+                  </div>
+
+                  <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-navy/90 text-white text-[11px] font-mono font-semibold shadow-xs">
+                    <span>Autonomous</span>
+                  </div>
+                </div>
+
+                {/* Card Content Footer */}
+                <div className="p-6 sm:p-7 bg-white relative border-t border-slate-100">
+                  <div className="flex items-center gap-2 text-xs font-mono font-semibold text-brand-magenta uppercase tracking-wider mb-2">
+                    <Building2 className="w-4 h-4" />
+                    <span>E.G.S. Pillay Engineering College</span>
+                  </div>
+
+                  <h3 className="text-xl font-bold font-display text-brand-navy tracking-tight mb-2">
+                    Nagapattinam, Tamil Nadu
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-500 flex items-center gap-1.5 mb-5">
+                    <MapPin className="w-3.5 h-3.5 text-brand-magenta shrink-0" />
+                    <span>Affiliated to Anna University • NAAC A++ • NBA Accredited</span>
+                  </p>
+
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                    <div>
+                      <span className="font-semibold text-slate-900">Host Department:</span>
+                      <p className="text-slate-500 mt-0.5">Computer Science & Business Systems</p>
+                    </div>
+                    <Link
+                      to="/about"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-brand-navy hover:text-brand-magenta transition-colors"
+                    >
+                      <span>Explore</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* ========================================================================= */}
@@ -524,6 +733,15 @@ export default function HomePage() {
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
+
+              {/* Mascot Robot Design Element */}
+              <div className="absolute -bottom-1 -right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+                <RobotMascot 
+                  size="md" 
+                  flip={true} 
+                  className="opacity-75 group-hover:opacity-100 transition-opacity" 
+                />
+              </div>
             </div>
 
             {/* NON-TECHNICAL EVENTS CARD */}
@@ -557,6 +775,15 @@ export default function HomePage() {
                   <span>Explore Events</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
+              </div>
+
+              {/* Mascot Robot Design Element */}
+              <div className="absolute -bottom-1 -right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+                <RobotMascot 
+                  size="md" 
+                  flip={true} 
+                  className="opacity-75 group-hover:opacity-100 transition-opacity" 
+                />
               </div>
             </div>
 

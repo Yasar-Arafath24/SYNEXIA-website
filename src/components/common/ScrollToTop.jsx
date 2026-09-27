@@ -3,13 +3,23 @@ import { useLocation } from 'react-router-dom';
 import { ArrowUp } from 'lucide-react';
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Scroll to top on route change
+  // Scroll restoration & smooth hash scrolling
   useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return;
+      }
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   // Show floating button when scrolled down
   useEffect(() => {

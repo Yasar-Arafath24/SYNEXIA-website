@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import EventBadge from './EventBadge';
+import RobotMascot from '../common/RobotMascot';
 
 /**
  * EventCard — Compact and Full preview card for SYNEXIA'26
@@ -85,9 +86,17 @@ export default function EventCard({
         </div>
 
         {/* One-Line Description */}
-        <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-2">
+        <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-2 pr-12">
           {event.shortDescription || event.description}
         </p>
+      </div>
+
+      {/* Robot Mascot Design Element — Sticky on right edge */}
+      <div className="absolute bottom-11 -right-1 pointer-events-none select-none z-10 opacity-90">
+        <RobotMascot 
+          size="sm" 
+          flip={true} 
+        />
       </div>
 
       {/* Action CTA: View Details */}

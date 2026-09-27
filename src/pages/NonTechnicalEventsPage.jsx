@@ -26,6 +26,7 @@ import PageHero from '../components/common/PageHero';
 import PrimaryButton from '../components/common/PrimaryButton';
 import RegistrationModal from '../components/common/RegistrationModal';
 import ScrollReveal from '../components/common/ScrollReveal';
+import RobotMascot from '../components/common/RobotMascot';
 import Seo from '../components/common/Seo';
 
 export default function NonTechnicalEventsPage() {
@@ -85,6 +86,15 @@ export default function NonTechnicalEventsPage() {
           {/* Asymmetric Accent: Thin Magenta Vertical Line & Top Accent */}
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-magenta" />
+
+          {/* Robot Mascot Design Element peeking from top-right */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+            <RobotMascot 
+              size="md" 
+              flip={true} 
+              className="opacity-80 group-hover:opacity-100 transition-opacity" 
+            />
+          </div>
 
           {/* Abstract Clue / Route Trail Background Graphic (Subtle & Energetic) */}
           <div className="absolute -top-10 -right-10 w-80 h-80 pointer-events-none opacity-[0.06] overflow-hidden">
@@ -246,6 +256,15 @@ export default function NonTechnicalEventsPage() {
           {/* Asymmetric Accent: Thin Magenta Vertical Line & Top Accent */}
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-navy" />
+
+          {/* Robot Mascot Design Element peeking from top-right */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+            <RobotMascot 
+              size="md" 
+              flip={true} 
+              className="opacity-80 group-hover:opacity-100 transition-opacity" 
+            />
+          </div>
 
           {/* Abstract Auction / Cricket Stadium Geometry Graphic */}
           <div className="absolute -bottom-10 -right-10 w-80 h-80 pointer-events-none opacity-[0.05] overflow-hidden">

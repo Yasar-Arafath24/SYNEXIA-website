@@ -28,6 +28,7 @@ import EventBadge from '../components/events/EventBadge';
 import EventRuleList from '../components/events/EventRuleList';
 import PrimaryButton from '../components/common/PrimaryButton';
 import SecondaryButton from '../components/common/SecondaryButton';
+import RobotMascot from '../components/common/RobotMascot';
 import Seo from '../components/common/Seo';
 
 export default function EventDetailPage() {
@@ -74,8 +75,20 @@ export default function EventDetailPage() {
           <div className="lg:col-span-8 space-y-8">
             
             {/* Overview / Detailed Description */}
-            <div className="brand-card p-6 sm:p-8">
-              <div className="flex items-center justify-between gap-4 mb-4">
+            <div className="brand-card p-6 sm:p-8 relative overflow-hidden group">
+              {/* Asymmetric Accent */}
+              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-brand-magenta" />
+              
+              {/* Robot Mascot Design Element */}
+              <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-3px]">
+                <RobotMascot 
+                  size="md" 
+                  flip={true} 
+                  className="opacity-75 group-hover:opacity-100 transition-opacity" 
+                />
+              </div>
+
+              <div className="flex items-center justify-between gap-4 mb-4 pr-16 sm:pr-24">
                 <h3 className="text-xl font-bold font-display text-brand-navy">Event Overview</h3>
                 {event.hasTwist && (
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-magenta/10 text-brand-magenta border border-brand-magenta/20 text-xs font-mono font-bold uppercase">
@@ -84,7 +97,7 @@ export default function EventDetailPage() {
                   </span>
                 )}
               </div>
-              <p className="text-slate-700 leading-relaxed text-base">
+              <p className="text-slate-700 leading-relaxed text-base pr-12">
                 {event.description}
               </p>
             </div>

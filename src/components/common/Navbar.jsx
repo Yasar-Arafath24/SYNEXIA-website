@@ -46,6 +46,22 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  const handleNavLinkClick = (e, path) => {
+    closeMenu();
+    if (path.includes('#')) {
+      const [targetPath, hash] = path.split('#');
+      const isTargetHome = targetPath === '' || targetPath === '/';
+      if ((isTargetHome && location.pathname === '/') || location.pathname === targetPath) {
+        const el = document.getElementById(hash);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth' });
+          window.history.pushState(null, '', path);
+        }
+      }
+    }
+  };
+
   // Close the mobile menu with Escape and restore focus to the toggle
   useEffect(() => {
     if (!isOpen) return;
@@ -119,31 +135,45 @@ export default function Navbar() {
 
           {/* CENTER / RIGHT Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Primary">
-            {NAV_LINKS.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${
-                    isActive
-                      ? 'text-brand-navy font-bold bg-brand-navy/5'
-                      : 'text-slate-600 hover:text-brand-navy hover:bg-slate-50'
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    <span>{link.label}</span>
-                    <span 
-                      aria-hidden="true"
-                      className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-brand-magenta transition-all duration-300 ${
-                        isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-                      }`} 
-                    />
-                  </>
-                )}
-              </NavLink>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isAnchor = link.path.includes('#');
+              const anchorHash = isAnchor ? link.path.split('#')[1] : null;
+
+              return (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  onClick={(e) => handleNavLinkClick(e, link.path)}
+                  className={({ isActive }) => {
+                    const active = isAnchor
+                      ? location.pathname === '/' && location.hash === `#${anchorHash}`
+                      : isActive;
+                    return `relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${
+                      active
+                        ? 'text-brand-navy font-bold bg-brand-navy/5'
+                        : 'text-slate-600 hover:text-brand-navy hover:bg-slate-50'
+                    }`;
+                  }}
+                >
+                  {({ isActive }) => {
+                    const active = isAnchor
+                      ? location.pathname === '/' && location.hash === `#${anchorHash}`
+                      : isActive;
+                    return (
+                      <>
+                        <span>{link.label}</span>
+                        <span 
+                          aria-hidden="true"
+                          className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-brand-magenta transition-all duration-300 ${
+                            active ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                          }`} 
+                        />
+                      </>
+                    );
+                  }}
+                </NavLink>
+              );
+            })}
           </nav>
 
           {/* RIGHT: Register button (visually stands out using SYNEXIA magenta/navy branding) */}
@@ -224,22 +254,30 @@ export default function Navbar() {
         }`}
       >
         <div className="px-4 py-4 space-y-1">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              onClick={closeMenu}
-              className={({ isActive }) =>
-                `block px-3.5 py-2.5 rounded-lg text-base font-medium transition-colors ${
-                  isActive
-                    ? 'text-brand-navy font-bold bg-slate-100'
-                    : 'text-slate-700 hover:text-brand-navy hover:bg-slate-50'
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isAnchor = link.path.includes('#');
+            const anchorHash = isAnchor ? link.path.split('#')[1] : null;
+
+            return (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                onClick={(e) => handleNavLinkClick(e, link.path)}
+                className={({ isActive }) => {
+                  const active = isAnchor
+                    ? location.pathname === '/' && location.hash === `#${anchorHash}`
+                    : isActive;
+                  return `block px-3.5 py-2.5 rounded-lg text-base font-medium transition-colors ${
+                    active
+                      ? 'text-brand-navy font-bold bg-slate-100'
+                      : 'text-slate-700 hover:text-brand-navy hover:bg-slate-50'
+                  }`;
+                }}
+              >
+                {link.label}
+              </NavLink>
+            );
+          })}
 
           {/* Mobile Register Link */}
           <div className="pt-3 mt-2 border-t border-slate-100">

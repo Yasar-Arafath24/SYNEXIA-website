@@ -70,6 +70,12 @@ export default function Footer() {
               Home
             </Link>
             <Link
+              to="/about"
+              className="text-slate-400 hover:text-white transition-colors duration-200"
+            >
+              About
+            </Link>
+            <Link
               to="/technical-events"
               className="text-slate-400 hover:text-white transition-colors duration-200"
             >

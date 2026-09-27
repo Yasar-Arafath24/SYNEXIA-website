@@ -336,6 +336,20 @@
   filter: blur(0px);
 }
 
+/* SYNEXIA Mascot Robot Animations */
+@keyframes robot-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-robot-float {
+  animation: robot-float 4.5s ease-in-out infinite;
+}
+
 /* Accessibility: Strictly respect prefers-reduced-motion across entire site */
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll,

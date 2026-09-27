@@ -49,7 +49,15 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 shadow-soft text-center">
+            <div className="p-4 sm:p-6 rounded-3xl bg-slate-50 border border-slate-200 shadow-soft text-center">
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-slate-100 border border-slate-200/80">
+                <img
+                  src="/assets/college-campus.png"
+                  alt="E.G.S. Pillay Engineering College Campus"
+                  className="w-full h-full object-cover opacity-75 hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent pointer-events-none" />
+              </div>
               <img
                 src={SYMPOSIUM_CONFIG.organizer.bannerImage}
                 alt="E.G.S. Pillay Engineering College"
@@ -110,17 +118,26 @@ export default function AboutPage() {
         </section>
 
         {/* SECTION 3: ABOUT SYNEXIA */}
-        <section className="max-w-4xl mx-auto text-center space-y-6">
+        <section className="max-w-4xl mx-auto space-y-8">
           <SectionTitle
             badge="The Symposium"
             badgeVariant="navy"
             title={`What is ${SYMPOSIUM_CONFIG.name}?`}
-            subtitle={`${SYMPOSIUM_CONFIG.name} is the flagship international symposium organized to bring together pioneering minds in computer science, business systems, and modern technology.`}
+            subtitle="An International Symposium organized by the Department of Computer Science and Business Systems (CSBS) at EGS Pillay Engineering College, Nagapattinam."
             align="center"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left pt-6">
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div className="bg-slate-50/80 rounded-3xl border border-slate-200 p-6 sm:p-10 space-y-6 text-slate-700 text-base sm:text-lg leading-relaxed">
+            <p>
+              <strong className="text-brand-navy font-semibold">SYNEXIA'26</strong> is an International Symposium organized by the Department of Computer Science and Business Systems (CSBS) at EGS Pillay Engineering College, Nagapattinam. Scheduled for October 14 and 15, 2026, the two-day event features a hybrid format with an online paper presentation on day one and full on-campus competitions on day two. The symposium offers a single ₹100 registration fee covering full access to all registered tracks, along with guaranteed certificates and food for all participants.
+            </p>
+            <p className="text-slate-600">
+              The event includes five major competitions divided across technical and non-technical domains. Technical tracks feature CODENEX (an AI-driven hackathon with cash prizes up to ₹5,000), SYNTAX STRIKE (a multi-level debugging challenge), and PRESENTIX (an article presentation contest that is completely free to join in its online mode). Non-technical offerings include NEXAHUNT, a team logic and treasure hunt, and SynerX Auction, a cricket squad bidding strategy game.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left pt-2">
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
               <CheckCircle2 className="w-5 h-5 text-brand-navy flex-shrink-0 mt-0.5" />
               <div>
                 <strong className="block text-sm text-slate-900">Knowledge Exchange</strong>
@@ -128,7 +145,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
               <CheckCircle2 className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
               <div>
                 <strong className="block text-sm text-slate-900">Competitive Excellence</strong>

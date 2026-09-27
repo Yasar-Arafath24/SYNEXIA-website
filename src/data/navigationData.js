@@ -4,6 +4,7 @@
 
 export const NAV_LINKS = [
   { label: "Home", path: "/" },
+  { label: "About", path: "/#about" },
   { label: "Technical Events", path: "/technical-events" },
   { label: "Non-Technical Events", path: "/non-technical-events" },
   { label: "Contact Us", path: "/contact" },
@@ -11,6 +12,7 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = [
   { label: "Home", path: "/" },
+  { label: "About", path: "/#about" },
   { label: "Technical Events", path: "/technical-events" },
   { label: "Non-Technical Events", path: "/non-technical-events" },
   { label: "Contact Us", path: "/contact" },

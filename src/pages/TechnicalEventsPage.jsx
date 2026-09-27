@@ -30,6 +30,7 @@ import PageHero from '../components/common/PageHero';
 import PrimaryButton from '../components/common/PrimaryButton';
 import RegistrationModal from '../components/common/RegistrationModal';
 import ScrollReveal from '../components/common/ScrollReveal';
+import RobotMascot from '../components/common/RobotMascot';
 import Seo from '../components/common/Seo';
 
 export default function TechnicalEventsPage() {
@@ -90,6 +91,14 @@ export default function TechnicalEventsPage() {
           {/* Asymmetric Accent: Thin Magenta Vertical Line & Top Navy Accent Line */}
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-navy" />
+
+          {/* Robot Mascot Design Element — Sticky at top-right */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 opacity-90">
+            <RobotMascot 
+              size="md" 
+              flip={true} 
+            />
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             
@@ -237,6 +246,14 @@ export default function TechnicalEventsPage() {
           {/* Asymmetric Accent: Thin Magenta Vertical Line & Top Navy Accent Line */}
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-navy" />
+
+          {/* Robot Mascot Design Element — Sticky at top-right */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 opacity-90">
+            <RobotMascot 
+              size="md" 
+              flip={true} 
+            />
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             
@@ -420,6 +437,15 @@ export default function TechnicalEventsPage() {
           {/* Asymmetric Accent: Thin Magenta Vertical Line & Top Navy Accent Line */}
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-navy" />
+
+          {/* Robot Mascot Design Element peeking from top-right */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+            <RobotMascot 
+              size="md" 
+              flip={true} 
+              className="opacity-80 group-hover:opacity-100 transition-opacity" 
+            />
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             
