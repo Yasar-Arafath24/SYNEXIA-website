@@ -18,13 +18,15 @@ export const SYMPOSIUM_CONFIG = {
   // Date & Venue Settings
   schedule: {
     isDateAnnounced: true,
-    dateDisplay: "October 14 & 15, 2026",
-    isoDate: "2026-10-14",
+    dateDisplay: "October 10 & 14, 2026",
+    isoDate: "2026-10-10",
     time: "9:00 AM – 5:00 PM",
     reportingTime: "8:30 AM",
-    allEventsDate: "October 14 & 15, 2026",
-    presentixDates: "October 14 (Online) & October 15 (Offline), 2026",
-    specialScheduleNote: "PRESENTIX Online Mode is conducted on October 14. All other tracks (CODENEX, SYNTAX STRIKE, NEXAHUNT, SynerX Auction) and PRESENTIX Offline Mode are conducted on October 15.",
+    allEventsDate: "October 10 & 14, 2026",
+    offlineDate: "October 10, 2026",
+    onlineDate: "October 14, 2026",
+    presentixDates: "October 10 (Offline) & October 14 (Online), 2026",
+    specialScheduleNote: "All on-campus tracks (CODENEX, SYNTAX STRIKE, NEXAHUNT, SynerX Auction) and PRESENTIX Offline Mode are conducted on-campus on October 10, 2026. PRESENTIX Online Mode is conducted virtually on October 14, 2026.",
   },
 
   // Highlighted Participant Perks
@@ -65,7 +67,9 @@ export const SYMPOSIUM_CONFIG = {
     isOpen: Boolean(siteConfig.registrationUrl && siteConfig.registrationUrl.length > 0),
     deadline: "October 12, 2026",
     fee: "₹100 per head (tech / non-tech) • Free for Online PRESENTIX",
-    symposiumDate: "October 14 & 15, 2026",
+    symposiumDate: "October 10 & 14, 2026",
+    offlineDate: "October 10, 2026",
+    onlineDate: "October 14, 2026",
     googleFormUrl: siteConfig.registrationUrl,
     qrCodeImage: siteConfig.qrCodePath,
     benefits: [

@@ -125,7 +125,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-white min-h-screen">
-      <Seo title="SYNEXIA'26 | International Symposium | EGS Pillay Engineering College" description="Join SYNEXIA'26, the international symposium by the Department of CSE & Business Systems, EGS Pillay Engineering College. Technical & non-technical events, cash prizes, food provided to all participants on October 14 & 15, 2026." />
+      <Seo title="SYNEXIA'26 | International Symposium | EGS Pillay Engineering College" description="Join SYNEXIA'26, the international symposium by the Department of CSE & Business Systems, EGS Pillay Engineering College. Technical & non-technical events, cash prizes, food provided to all participants on October 10 & 14, 2026." />
       
       {/* ========================================================================= */}
       {/* SECTION 1 — HERO                                                          */}
@@ -215,11 +215,11 @@ export default function HomePage() {
               <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200/90 shadow-subtle text-xs sm:text-sm">
                 <div className="flex items-center gap-2 text-brand-navy font-bold font-display">
                   <Calendar className="w-4 h-4 text-brand-magenta" />
-                  <span className="tracking-wide">SYMPOSIUM DATES: OCTOBER 14 & 15, 2026</span>
+                  <span className="tracking-wide">SYMPOSIUM DATES: OCTOBER 10 & 14, 2026</span>
                 </div>
                 <span className="hidden sm:inline text-slate-300">•</span>
                 <span className="text-slate-700 text-xs font-mono font-medium">
-                  OCT 14: <strong className="text-emerald-700">PRESENTIX ONLINE</strong> | OCT 15: <strong className="text-brand-navy">ALL EVENTS ON-CAMPUS</strong>
+                  OCT 10: <strong className="text-brand-navy">ALL EVENTS ON-CAMPUS</strong> | OCT 14: <strong className="text-emerald-700">PRESENTIX ONLINE</strong>
                 </span>
               </div>
             </div>
@@ -236,13 +236,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Official Robot Mascot Element on Landing Page */}
+            {/* Official Robot Mascot Element on Landing Page — Sticky / Stationary */}
             <div className="mb-8 flex justify-center items-center animate-fade-up stagger-4">
               <div className="relative inline-flex items-center gap-3.5 sm:gap-4 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white border border-slate-200/90 shadow-subtle hover:border-brand-magenta/40 hover:shadow-md transition-all duration-300">
                 <div className="relative">
                   <RobotMascot 
                     size="md" 
-                    floating={true} 
                     speechBubble="Welcome to SYNEXIA'26! 👍" 
                     speechPosition="top" 
                   />
@@ -256,7 +255,7 @@ export default function HomePage() {
                     Meet SYNEX — Your Symposium Guide
                   </h3>
                   <p className="text-xs text-slate-500 font-medium mt-0.5">
-                    5 Exciting Tracks • Single ₹100 Delegate Fee • Food & Certificates Included
+                    5 Exciting Tracks • Oct 10 (Offline) & Oct 14 (Online) • Food & Certificates Included
                   </p>
                 </div>
               </div>
@@ -371,7 +370,7 @@ export default function HomePage() {
                           <span>PRESENTIX Online Contest</span>
                         </div>
                         <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                          Registering for <strong>PRESENTIX</strong> to contest in <span className="text-emerald-700 font-bold">Online Mode (Oct 14) is completely FREE</span>! Offline mode will be held on <strong>Oct 15</strong>.
+                          Offline mode will be held on-campus on <strong>Oct 10</strong>, and <span className="text-emerald-700 font-bold">Online Mode (Oct 14) is completely FREE</span>!
                         </p>
                       </div>
 
@@ -538,7 +537,7 @@ export default function HomePage() {
               </h2>
 
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
-                <strong className="text-brand-navy font-semibold">SYNEXIA'26</strong> is an International Symposium organized by the Department of Computer Science and Business Systems (CSBS) at EGS Pillay Engineering College, Nagapattinam. Scheduled for October 14 and 15, 2026, the two-day event features a hybrid format with an online paper presentation on day one and full on-campus competitions on day two. The symposium offers a single ₹100 registration fee covering full access to all registered tracks, along with guaranteed certificates and food for all participants.
+                <strong className="text-brand-navy font-semibold">SYNEXIA'26</strong> is an International Symposium organized by the Department of Computer Science and Business Systems (CSBS) at EGS Pillay Engineering College, Nagapattinam. Scheduled for October 10 and 14, 2026, the two-day event features a hybrid format with on-campus competitions on October 10 and an online paper presentation on October 14. The symposium offers a single ₹100 registration fee covering full access to all registered tracks, along with guaranteed certificates and food for all participants.
               </p>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -573,7 +572,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-slate-900">Hybrid Event Structure</div>
-                    <div className="text-[11px] text-slate-500">Day 1 Online • Day 2 On-Campus</div>
+                    <div className="text-[11px] text-slate-500">Oct 10 On-Campus • Oct 14 Online</div>
                   </div>
                 </div>
 

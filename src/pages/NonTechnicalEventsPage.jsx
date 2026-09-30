@@ -58,7 +58,7 @@ export default function NonTechnicalEventsPage() {
                 Schedule & Entitlements
               </span>
               <p className="text-sm sm:text-base font-bold font-display text-brand-navy">
-                All Non-Technical Events on October 15, 2026 • Offline (On-Campus)
+                All Non-Technical Events on October 10, 2026 • Offline (On-Campus)
               </p>
             </div>
           </div>
@@ -87,12 +87,11 @@ export default function NonTechnicalEventsPage() {
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-magenta" />
 
-          {/* Robot Mascot Design Element peeking from top-right */}
-          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+          {/* Robot Mascot Design Element peeking from top-right — Sticky */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 opacity-90">
             <RobotMascot 
               size="md" 
               flip={true} 
-              className="opacity-80 group-hover:opacity-100 transition-opacity" 
             />
           </div>
 
@@ -165,7 +164,7 @@ export default function NonTechnicalEventsPage() {
               <div className="pt-2 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Date: <strong className="text-slate-800">October 15, 2026</strong></span>
+                  <span>Date: <strong className="text-slate-800">October 10, 2026</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-brand-navy flex-shrink-0" />
@@ -257,12 +256,11 @@ export default function NonTechnicalEventsPage() {
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-navy" />
 
-          {/* Robot Mascot Design Element peeking from top-right */}
-          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+          {/* Robot Mascot Design Element peeking from top-right — Sticky */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 opacity-90">
             <RobotMascot 
               size="md" 
               flip={true} 
-              className="opacity-80 group-hover:opacity-100 transition-opacity" 
             />
           </div>
 
@@ -335,7 +333,7 @@ export default function NonTechnicalEventsPage() {
               <div className="pt-2 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Date: <strong className="text-slate-800">October 15, 2026</strong></span>
+                  <span>Date: <strong className="text-slate-800">October 10, 2026</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-brand-navy flex-shrink-0" />

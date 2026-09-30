@@ -57,7 +57,7 @@ export default function EventCard({
         {/* Date & Mode Meta Badges */}
         <div className="flex flex-wrap items-center gap-1.5 mb-3 text-[11px] font-mono">
           <span className="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-semibold border border-slate-200/80">
-            {event.date || "Oct 14, 2026"}
+            {event.date || "Oct 10, 2026"}
           </span>
           {event.isHybrid ? (
             <span className="inline-flex items-center px-2 py-0.5 rounded bg-brand-magenta/10 text-brand-magenta font-bold border border-brand-magenta/30">

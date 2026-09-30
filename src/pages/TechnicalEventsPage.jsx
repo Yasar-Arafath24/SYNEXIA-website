@@ -63,7 +63,7 @@ export default function TechnicalEventsPage() {
                 Schedule & Entitlements
               </span>
               <p className="text-sm sm:text-base font-bold font-display text-brand-navy">
-                OCT 14: PRESENTIX Online • OCT 15: All Technical & Non-Technical Events On-Campus
+                OCT 10: All Events On-Campus (Offline) • OCT 14: PRESENTIX Online
               </p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function TechnicalEventsPage() {
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Date: <strong className="text-slate-800">October 15, 2026</strong></span>
+                  <span>Date: <strong className="text-slate-800">October 10, 2026</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-brand-navy flex-shrink-0" />
@@ -280,7 +280,7 @@ export default function TechnicalEventsPage() {
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Date: <strong className="text-slate-800">October 15, 2026</strong></span>
+                  <span>Date: <strong className="text-slate-800">October 10, 2026</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-brand-navy flex-shrink-0" />
@@ -438,12 +438,11 @@ export default function TechnicalEventsPage() {
           <div className="absolute left-0 top-0 bottom-0 w-[3.5px] bg-brand-magenta" />
           <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-brand-navy" />
 
-          {/* Robot Mascot Design Element peeking from top-right */}
-          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-4px] group-hover:-translate-y-1">
+          {/* Robot Mascot Design Element — Sticky at top-right */}
+          <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 opacity-90">
             <RobotMascot 
               size="md" 
               flip={true} 
-              className="opacity-80 group-hover:opacity-100 transition-opacity" 
             />
           </div>
 
@@ -480,7 +479,7 @@ export default function TechnicalEventsPage() {
                       Dual Mode Schedule
                     </span>
                     <span className="text-xs sm:text-sm font-bold font-display text-brand-navy leading-tight">
-                      Online (Oct 14) • Offline (Oct 15)
+                      Offline (Oct 10) • Online (Oct 14)
                     </span>
                   </div>
                 </div>
@@ -488,16 +487,16 @@ export default function TechnicalEventsPage() {
 
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-brand-navy flex-shrink-0" />
+                  <span>Offline Contest: <strong className="text-brand-navy font-bold">October 10, 2026</strong></span>
+                </div>
+                <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-brand-magenta flex-shrink-0" />
                   <span>Online Contest: <strong className="text-emerald-700 font-bold">October 14, 2026 (Free)</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-brand-navy flex-shrink-0" />
-                  <span>Offline Contest: <strong className="text-brand-navy font-bold">October 15, 2026</strong></span>
-                </div>
-                <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                  <span>Mode: <strong className="text-slate-800">Online (Oct 14) & Offline (Oct 15)</strong></span>
+                  <span>Mode: <strong className="text-slate-800">Offline (Oct 10) & Online (Oct 14)</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-brand-navy flex-shrink-0" />
@@ -514,7 +513,7 @@ export default function TechnicalEventsPage() {
                   </span>
                 </div>
                 <p className="text-xs text-emerald-800 mt-1 leading-relaxed">
-                  Registering PRESENTIX to contest in Online mode on October 14 is completely free of charge. Offline presentations take place on-campus on October 15.
+                  Offline presentations take place on-campus on October 10. Registering PRESENTIX to contest in Online mode on October 14 is completely free of charge.
                 </p>
               </div>
 

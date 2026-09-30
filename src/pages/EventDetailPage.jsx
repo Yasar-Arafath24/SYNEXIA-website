@@ -79,12 +79,11 @@ export default function EventDetailPage() {
               {/* Asymmetric Accent */}
               <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-brand-magenta" />
               
-              {/* Robot Mascot Design Element */}
-              <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 transition-all duration-500 ease-out group-hover:translate-x-[-3px]">
+              {/* Robot Mascot Design Element — Sticky */}
+              <div className="absolute top-3 -right-1 sm:top-5 sm:-right-2 pointer-events-none select-none z-10 opacity-90">
                 <RobotMascot 
                   size="md" 
                   flip={true} 
-                  className="opacity-75 group-hover:opacity-100 transition-opacity" 
                 />
               </div>
 
@@ -258,7 +257,7 @@ export default function EventDetailPage() {
                   <Calendar className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="block text-xs text-slate-500 font-medium">Event Date</span>
-                    <strong className="text-brand-navy font-semibold">{event.date || 'October 14, 2026'}</strong>
+                    <strong className="text-brand-navy font-semibold">{event.date || 'October 10, 2026'}</strong>
                   </div>
                 </div>
 
